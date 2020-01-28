@@ -1,0 +1,19 @@
+DMTR: DM Test (Plan and) Report
+LVV: LSST Verification and Validation (Jira project)
+NA: Not Available
+ICD: Interface Control Document
+CA-DM-SUP-ICD: Requirements for Support-Data Exchanges between Data Management and Camera (\citeds{LSE-130})
+DMS-REQ: Data Management top level requirements (\citeds{LSE-61})
+CA-DM-DAQ-ICD: Requirements for Camera Data Acquisition Interface (\citeds{LSE-68})
+CA-DM-CON-ICD: Requirements for Interface between the Camera and Data Management (\citeds{LSE-69})
+OCS-DM-COM-ICD: Requirements for OCS - Data Management Software Communication Interface (\citeds{LSE-72})
+DM-TS-CON-ICD: Requirements for Control System Interfaces between the Telescope \& Data Management (\citeds{LSE-75})
+EP-DM-CON-ICD: Requirements for Interface between Data Management and EPO (\citeds{LSE-131})
+DM-TS-AUX-ICD: Requirements for Auxiliary Instrumentation Interface between Data Management and Telescope (\citeds{LSE-140})
+SYS-ALL-COM-ICD: Requirements for LSST Observatory Control System Communication Architecture and Protocol (\citeds{LSE-70})
+CPT-OCS-INT-ICD: Summit Computer Room Requirements (\citeds{LSE-209})
+DMS-LSP-REQ: Top level LSP requirements (\citeds{LDM-554})
+DMS-PRTL-REQ: LSP Portal Aspect requirements (\citeds{LDM-554})
+DMS-NB-REQ: LSP Notebook Aspect requirements (\citeds{LDM-554})
+DMS-API-REQ: LSP API Aspect requirements (\citeds{LDM-554})
+TC: Test Case
