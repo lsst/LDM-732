@@ -17,3 +17,25 @@ DMS-PRTL-REQ: LSP Portal Aspect requirements (\citeds{LDM-554})
 DMS-NB-REQ: LSP Notebook Aspect requirements (\citeds{LDM-554})
 DMS-API-REQ: LSP API Aspect requirements (\citeds{LDM-554})
 TC: Test Case
+LATISS: LSST Atmospheric Transmission Imager and Slitless Spectrograph
+IP: Internet Protocol
+FL: Florida
+OSI: Open System Interconnect
+BERT: Bit Error Rate Tester
+OTDR: Optical Time Domain Reflectometer
+MTTR: Mean Time to Repair
+CISS: Computer Infrastructure Services South (part of the former NOAO Cerro Tololo Inter-american Observatory (CTIO), now merged into NSF’S OIR Lab Central Operating Services)
+CHI: Chicago
+CHMPGN: Champaign (Illinois)
+SCL: Santiago, Chile
+TCS: Telescope Control System
+CCS: Camera Control System
+ISO: International Standards Organization
+LS: La Serena
+VNVD: Vera C Rubin Observatory Network Verification Document
+DMSSIT: DM Subsystem Integration Test
+SIT: LSST System Integration Test
+LL: Lower Level
+HL: Higher Level
+SL: Same Level
+
