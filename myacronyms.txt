@@ -38,4 +38,6 @@ SIT: LSST System Integration Test
 LL: Lower Level
 HL: Higher Level
 SL: Same Level
-
+SLAC: SLAC National Accelerator Lab
+MTBF: Mean Time Between Failures
+LHN: Long-Haul Networks

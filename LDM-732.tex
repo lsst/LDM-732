@@ -80,28 +80,19 @@ is covered by the Telescope and Site V\&V plans.
 
 \subsubsection{Data Management Subsystem Requirements Flow-down}\label{sec:dmreqflowd}
 
-The Data Management Subsystem Requirements (\citeds{LSE-61}, aka DMSR) drive the LSST 
-Observatory Network Design for all segments except the Summit Network (see above).  
-The DMSR sections that directly drive the LONVP are listed here for convenience. 
-These DMSR sections contain lead to traceable derived network requirements as documented 
-in the LONVM (and they are listed in the LONVM in their original form).
+The Data Management Subsystem Requirements (LSE-61, aka DMSR) drive the LSST Observatory Network Design 
+for all segments except the Summit Network (see above).  The DMSR sections that directly drive the 
+VNVD are listed here for convenience. These DMSR sections contain traceable network requirements as 
+documented in the LSST V\&V JIRA Project (LVV) Verification Elements:
 
 \begin{itemize}
-\item 4.4 Summit to Base 
-\item 4.6 Base to Archive 
-\item 4.8 Archive to Data Access Center 
-\end{itemize}
-
-In addition, while some of the DM requirements do not explicitly identify nor constrain the Networks, 
-they do specify latency requirements and as such lead to traceable derived LONVP requirements as 
-documented in the LONVM.  For each parent requirement in these sections, a derived network requirement 
-was created with “-NET” appended to the ID of the parent requirement.
-
-\begin{itemize}
-\item 1.2.1 Nightly Data Accessible Within 24 hrs 
+\item 1.2.1 Nightly Data Accessible Within 24 hrs
 \item 2.6.3 Transient Alert Distribution
-\item 2.6.8 Solar System Objects Available within 24 hours 
+\item 2.6.8 Solar System Objects Available within 24 hours
 \item 2.8.1 Timely Publication of Level 2 Data Releases
+\item 4.4 Summit to Base
+\item 4.6 Base to Archive
+\item 4.8 Archive to Data Access Center
 \end{itemize}
 
 \subsubsection{Observatory System Specifications Flow-down}\label{sec:ossflowd}
