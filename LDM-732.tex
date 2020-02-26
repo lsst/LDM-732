@@ -1,0 +1,152 @@
+\documentclass[DM,lsstdraft,STS,toc]{lsstdoc}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{arydshln}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{lipsum}
+
+
+\input meta.tex
+
+%\input{aglossary.tex}
+%\makeglossaries
+
+\DeclareRobustCommand{\cmdkey}{\raisebox{-.035em}{\includegraphics[height=.75em]{figures/cmdkey}}}
+
+\begin{document}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\def\product{LSST Data Management}
+
+\setDocCompact{true}
+
+\title[Network Verification Document]{Vera C. Rubin Network Verification Document}
+
+\author{Jeff Kantor}
+\setDocRef{\lsstDocType-\lsstDocNum}
+\setDocDate{\vcsdate}
+
+\setDocAbstract {
+The Vera C Rubin Observatory Network Verification Document (VNVD) and associated JIRA V\&V
+Project define the flow-down of specifications from higher level documents to the LSST
+Observatory Network (as defined in LSE-78 LSST Observatory Network), and the methods and
+resources that will be used to verify that the networks have met the specifications satisfactory
+for accepting the Summit Network into DM Subsystem Integration Test (DMSSIT) and LSST
+System Integration Test (SIT)
+}
+
+% Most recent last
+\setDocChangeRecord{%
+	\addtohist{}{2020-01-28}{First draft}{J.~Kantor}
+	\addtohist{}{2020-02-21}{Document ready for CCB approval}{J.~Kantor}
+}
+
+\setDocUpstreamLocation{\url{https://github.com/lsst/ldm-732}}
+\setDocUpstreamVersion{\vcsrevision}
+
+\maketitle
+
+
+\section{Introduction}\label{sec:intro}
+
+
+\subsection{Scope}\label{sec:scope}
+
+This plan governs only tests of the network infrastructure, not the applications and services that
+use the network. To be specific, this plan governs tests of the network only up to ISO OSI Layer
+\url{https://en.wikipedia.org/wiki/OSI_model}.
+
+As such, all of the tests governed by this plan and defined in the 
+\href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation JIRA Project (LVV)} 
+are defined as Lower Level (LL) in the System Engineering test hierarchy. LL
+corresponds to Data Management Subsystem Integration. Where appropriate, additional
+comments regarding Same Level (SL) which corresponds to LSST System Integration, and Higher
+Level (HL) which corresponds to LSST Commissioning, are called out in the Verification
+Elements.
+
+Note that significant testing of the networks occurs prior to subsystem and system integration,
+i.e. prior to verification, as documented in document-14789 LSST LHN End-to-End Plan and
+associated test documentation 
+(see \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-3758}{Collection-3758}).
+
+Finally, note that one significant network, the Summit Network, is not a DM deliverable and as
+such is not contained within this plan. As Telescope and Site deliverable, the Summit Network
+is covered by the Telescope and Site V\&V plans.
+
+\subsection{Specification Flow-down}\label{sec:sepcflowd}
+
+\subsubsection{Data Management Subsystem Requirements Flow-down}\label{sec:dmreqflowd}
+
+The Data Management Subsystem Requirements (LSE-61, aka DMSR) drive the LSST Observatory Network Design 
+for all segments except the Summit Network (see above).  The DMSR sections that directly drive the 
+VNVD are listed here for convenience. These DMSR sections contain traceable network requirements as 
+documented in the LSST V\&V JIRA Project (LVV) Verification Elements:
+
+\begin{itemize}
+\item 1.2.1 Nightly Data Accessible Within 24 hrs
+\item 2.6.3 Transient Alert Distribution
+\item 2.6.8 Solar System Objects Available within 24 hours
+\item 2.8.1 Timely Publication of Level 2 Data Releases
+\item 4.4 Summit to Base
+\item 4.6 Base to Archive
+\item 4.8 Archive to Data Access Center
+\end{itemize}
+
+\subsubsection{Observatory System Specifications Flow-down}\label{sec:ossflowd}
+
+Note that the Observatory System Specifications (LSE-30, aka OSS) also include general requirements 
+on security, disaster recovery, physical environment (including seismic activity), and shipping 
+which are flowed down to the subsystems, and while they apply to all subsystems, including the networks, 
+they will be tested and verified in the Telescope and Data Management Subsystem Integration Tests and in 
+the LSST Commissioning Phase, as part of the LSST System Integration Test.  Those requirements are excluded 
+from this specification and the associated verification matrix, as they will be addressed in the applicable plans.
+
+\subsection{LSST Verification and Validation JIRA Project (LVV)}\label{sec:lvv}
+
+The LSST Verification and Validation JIRA Project lists the specifications within or derived from, 
+and traceable to, the DMSR specifications, in Verification Elements that also specify the methods 
+to be used to verify, the responsible parties, and additional notes regarding verification, per the 
+\citeds{LSE-160} LSST Verification and Validation Process. The Verification Elements then have one or more 
+Test Cases associated with them that describe the implementation of the verification activities in terms 
+of specific tests to be executed.  Those Test Cases are then scheduled via Test Plans and Campaigns, 
+and executed with results reported in Test Cycles/
+
+\subsection{Verification and Validation Schedule and Resources}\label{sec:schedule}
+
+The schedule and resources required for network verification are defined in the LSST 
+Project Management Control System (PMCS).  They are covered by the final integration test activities in 
+the WBS elements 02C.08.03 Long-Haul Networks.  In each Verification Element, a cross-reference to the 
+ID of the appropriate predecessor PMCS activities is provided in the pre-conditions field.
+
+
+\subsection{Applicable Documents}
+\label{sec:docs}
+
+\begin{tabular}[htb]{l l}
+\citeds{LSE-61}  & LSST DM Subsystem Requirements \\
+\citeds{LSE-78}  & LSST Observatory Network Design \\
+\citeds{LSE-160} & Verification and Validation Process \\
+\end{tabular}
+
+
+\newpage
+\input{jira_docugen}
+
+\newpage
+\section{References\label{sect:references}}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads,local.bib}
+
+\newpage
+\section{Acronyms \label{sect:acronyms}} % include acronyms.tex generated by the generateAcronyms.py (in texmf/scripts)
+\input{acronyms}
+
+%\section{Glossary \label{sect:glossary}}
+%\renewcommand{\refname}{}
+%\printglossaries
+
+\end{document}
