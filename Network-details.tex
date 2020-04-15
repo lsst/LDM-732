@@ -2,12 +2,134 @@
 % do not edit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{ DM Network Verification Elements }
+\documentclass[DM]{lsstdoc}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{arydshln}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{lipsum}
+
+\input{meta.tex}
+
+\author{}
+
+\DeclareRobustCommand{\cmdkey}{\raisebox{-.035em}{\includegraphics[height=.75em]{figures/cmdkey}}}
+
+\begin{document}
+
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\def\product{LSST Data Management}
+
+
+\title{Verification Elelements Details for the Network Component in DM Subsystem}
+\mkshorttitle
+
+This is a detailed view of the Verification Elements and relevant associated information, for the specified subcomponent.
+The Verification Elements are baselined as per {\lsstDocType}-{lsstDocNum} and each time a new draft is produced,
+this view is updated with the correct information. However, test cases are baselined in other documents, and
+will be updated during future test activities. Therefore, in some cases, the  information shown here for the
+test cases may be outdated.
+
+\section{Summary Overview}
+
+\begin{longtable}{cccc}
+\hline
+\textbf{Requirements} & & \textbf{Verification Elements} & \textbf{Test Cases} \\ \hline
+ DMS-REQ-0168 &
+  {\scriptsize \ref{lvv-71} } & LVV-71({\scriptsize Gregory Dubois-Felsmann })
+ &
+LVV-T1097 ({\scriptsize Jeff Kantor }) \\
+\hline
+ DMS-REQ-0171 &
+  {\scriptsize \ref{lvv-73} } & LVV-73({\scriptsize Robert Gruendl })
+ &
+LVV-T1168 ({\scriptsize Jeff Kantor }) \\
+ &
+  &
+ &
+LVV-T1612 ({\scriptsize Jeff Kantor }) \\
+\hline
+ DMS-REQ-0172 &
+  {\scriptsize \ref{lvv-74} } & LVV-74({\scriptsize Robert Gruendl })
+ &
+LVV-T185 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0173 &
+  {\scriptsize \ref{lvv-75} } & LVV-75({\scriptsize Robert Gruendl })
+ &
+LVV-T186 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0174 &
+  {\scriptsize \ref{lvv-76} } & LVV-76({\scriptsize Robert Gruendl })
+ &
+LVV-T187 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0175 &
+  {\scriptsize \ref{lvv-77} } & LVV-77({\scriptsize Robert Gruendl })
+ &
+LVV-T188 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0180 &
+  {\scriptsize \ref{lvv-81} } & LVV-81({\scriptsize Robert Gruendl })
+ &
+LVV-T193 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0181 &
+  {\scriptsize \ref{lvv-82} } & LVV-82({\scriptsize Robert Gruendl })
+ &
+LVV-T194 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0182 &
+  {\scriptsize \ref{lvv-83} } & LVV-83({\scriptsize Robert Gruendl })
+ &
+LVV-T195 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0183 &
+  {\scriptsize \ref{lvv-84} } & LVV-84({\scriptsize Robert Gruendl })
+ &
+LVV-T196 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0188 &
+  {\scriptsize \ref{lvv-88} } & LVV-88({\scriptsize Robert Gruendl })
+ &
+LVV-T200 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0189 &
+  {\scriptsize \ref{lvv-89} } & LVV-89({\scriptsize Robert Gruendl })
+ &
+LVV-T201 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0190 &
+  {\scriptsize \ref{lvv-90} } & LVV-90({\scriptsize Robert Gruendl })
+ &
+LVV-T202 ({\scriptsize Robert Gruendl }) \\
+\hline
+ DMS-REQ-0191 &
+  {\scriptsize \ref{lvv-91} } & LVV-91({\scriptsize Robert Gruendl })
+ &
+LVV-T203 ({\scriptsize Kian-Tat Lim }) \\
+\hline
+ DMS-REQ-0352 &
+  {\scriptsize \ref{lvv-183} } & LVV-183({\scriptsize Robert Gruendl })
+ &
+LVV-T192 ({\scriptsize Robert Gruendl }) \\
+ \cdashline{2-4}  &
+  {\scriptsize \ref{lvv-18491} } & LVV-18491({\scriptsize Robert Gruendl })
+ &
+LVV-T181 ({\scriptsize Robert Gruendl }) \\
+\hline
+\end{longtable}
+
+\section{Verification Elements Details}
 \label{sec:ves}
 
 The following is the list of verification elements defined in the context of the Network component of the DM subsystem.
 
-\newpage
 \subsection{[LVV-71] DMS-REQ-0168-V-01: Summit Facility Data Communications }\label{lvv-71}
 
 \begin{longtable}{ccccc}
@@ -104,8 +226,33 @@ PMCS T\&SC-2600-1545 Complete
 Ron Lambert (LSST), Kian-Tat Lim (LSST), Matt Kollross (NCSA), Tony
 Johnson (SLAC), Gregg Thayer (SLAC)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Verify the available documentation in order to ensure that the Summit to
+Base Network has been set-up and is working.
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+List of documents that demonstrate the network implementation
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-73] DMS-REQ-0171-V-01: Summit to Base Network }\label{lvv-73}
 
 \begin{longtable}{ccccc}
@@ -231,6 +378,82 @@ See pre-conditions by phase above.
 Ron Lambert (LSST), Albert Astudillo (REUNA), Mauricio Rojas
 (CTIO/CISS), Raylex, Coriant, Telefonica contractors
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Test optical fiber with OTDR
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+OTDR generated optical data
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Fiber tested to within acceptable Db.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Test AURA DWDM
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+DTN perfSonar generated data
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Summit - Base bandwidth and latency within specifications
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 3
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Test LSST DWDM
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+BERT generated data
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Summit - Base bandwidth, latency, bit error rate within specifications
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
 \subsubsection{[LVV-T1612] Verify Summit - Base Network Integration (System Level) }
 
 \begin{longtable}{cccccc}
@@ -262,8 +485,26 @@ See pre-conditions.
 \textbf{Test Personnel:} \\
 Ron Lambert (LSST), Greg Thayer (SLAC)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-74] DMS-REQ-0172-V-01: Summit to Base Network Availability }\label{lvv-74}
 
 \begin{longtable}{ccccc}
@@ -333,8 +574,27 @@ See pre-conditions.
 \textbf{Test Personnel:} \\
 Ron Lambert (LSST)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-75] DMS-REQ-0173-V-01: Summit to Base Network Reliability }\label{lvv-75}
 
 \begin{longtable}{ccccc}
@@ -442,8 +702,27 @@ See pre-conditions.
 \textbf{Test Personnel:} \\
 Ron Lambert (LSST), Guido Maulen (LSST)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-76] DMS-REQ-0174-V-01: Summit to Base Network Secondary Link }\label{lvv-76}
 
 \begin{longtable}{ccccc}
@@ -524,8 +803,27 @@ See pre-conditions.
 \textbf{Test Personnel:} \\
 Ron Lambert (LSST)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-77] DMS-REQ-0175-V-01: Summit to Base Network Ownership and Operation }\label{lvv-77}
 
 \begin{longtable}{ccccc}
@@ -588,8 +886,27 @@ PMCS DMTC-7400-2140, -2240, -2330 Complete
 \textbf{Test Personnel:} \\
 Jeff Kantor (LSST)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-81] DMS-REQ-0180-V-01: Base to Archive Network }\label{lvv-81}
 
 \begin{longtable}{ccccc}
@@ -665,8 +982,27 @@ PMCS DM-Net-5 Complete
 \textbf{Test Personnel:} \\
 Ron Lambert (LSST)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-82] DMS-REQ-0181-V-01: Base to Archive Network Availability }\label{lvv-82}
 
 \begin{longtable}{ccccc}
@@ -739,8 +1075,27 @@ LDF, connected to Base - Archive Network.
 \textbf{Test Personnel:} \\
 
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-83] DMS-REQ-0182-V-01: Base to Archive Network Reliability }\label{lvv-83}
 
 \begin{longtable}{ccccc}
@@ -811,8 +1166,27 @@ PMCS DM-NET-5 Complete
 Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 (FIU/AmLight), Matt Kollross (NCSA)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-84] DMS-REQ-0183-V-01: Base to Archive Network Secondary Link }\label{lvv-84}
 
 \begin{longtable}{ccccc}
@@ -897,8 +1271,27 @@ PMCS DMTC-8200-0600 Complete
 Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 (FIU/AmLight), Matt Kollross (NCSA)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-88] DMS-REQ-0188-V-01: Archive to Data Access Center Network }\label{lvv-88}
 
 \begin{longtable}{ccccc}
@@ -973,8 +1366,27 @@ PMCS DMTC-8100-2550 Complete
 Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 (FIU/AmLight), Matt Kollross (NCSA)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-89] DMS-REQ-0189-V-01: Archive to Data Access Center Network Availability }\label{lvv-89}
 
 \begin{longtable}{ccccc}
@@ -1046,8 +1458,27 @@ PMCS DMTC-8100-2550 Complete
 Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 (FIU/AmLight), Matt Kollross (NCSA)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-90] DMS-REQ-0190-V-01: Archive to Data Access Center Network Reliability }\label{lvv-90}
 
 \begin{longtable}{ccccc}
@@ -1117,8 +1548,27 @@ PMCS DMTC-8100-2550 Complete
 Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 (FIU/AmLight), Matt Kollross (NCSA)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-91] DMS-REQ-0191-V-01: Archive to Data Access Center Network Secondary Link }\label{lvv-91}
 
 \begin{longtable}{ccccc}
@@ -1194,8 +1644,66 @@ PMCS DMTC-8100-2550 Complete
 Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 (FIU/AmLight), Matt Kollross (NCSA)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Take primary network link down
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Observe operations support over secondary link
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 3
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Bring primary network link back up
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 4
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Observe catch-up capability over secondary link
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-183] DMS-REQ-0352-V-01: Base Wireless LAN (WiFi) }\label{lvv-183}
 
 \begin{longtable}{ccccc}
@@ -1262,8 +1770,27 @@ PMCS DLP-465 Complete.
 \textbf{Test Personnel:} \\
 Heinrich Reinking (LSST)
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
 
-\newpage
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{[LVV-18491] DMS-REQ-0352-V-02: Base Voice Over IP (VOIP) }\label{lvv-18491}
 
 \begin{longtable}{ccccc}
@@ -1334,80 +1861,34 @@ PMCS IT-702 Complete
 Heinrich Reinking (LSST), another LSST DM Person at Summit,
 Headquarters, or LDF
 
+\textbf{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Delegate to Networks
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
+        \\ \midrule
+    \end{longtable}
 
 
-\newpage
+
 \appendix
-\section{Traceability}
-\label{sec:trace}
+\section{References\label{sect:references}}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads,local.bib}
 
-\begin{longtable}{ccc}
-\hline
-\textbf{Requirements} & \textbf{Verification Elements} & \textbf{Test Cases} \\ \hline
- DMS-REQ-0168 &
- LVV-71({\scriptsize Gregory Dubois-Felsmann })  &
-LVV-T1097 ({\scriptsize Jeff Kantor }) \\
-\hline
- DMS-REQ-0171 &
- LVV-73({\scriptsize Robert Gruendl })  &
-LVV-T1168 ({\scriptsize Jeff Kantor }) \\
- &
- &
-LVV-T1612 ({\scriptsize Jeff Kantor }) \\
-\hline
- DMS-REQ-0172 &
- LVV-74({\scriptsize Robert Gruendl })  &
-LVV-T185 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0173 &
- LVV-75({\scriptsize Robert Gruendl })  &
-LVV-T186 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0174 &
- LVV-76({\scriptsize Robert Gruendl })  &
-LVV-T187 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0175 &
- LVV-77({\scriptsize Robert Gruendl })  &
-LVV-T188 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0180 &
- LVV-81({\scriptsize Robert Gruendl })  &
-LVV-T193 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0181 &
- LVV-82({\scriptsize Robert Gruendl })  &
-LVV-T194 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0182 &
- LVV-83({\scriptsize Robert Gruendl })  &
-LVV-T195 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0183 &
- LVV-84({\scriptsize Robert Gruendl })  &
-LVV-T196 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0188 &
- LVV-88({\scriptsize Robert Gruendl })  &
-LVV-T200 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0189 &
- LVV-89({\scriptsize Robert Gruendl })  &
-LVV-T201 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0190 &
- LVV-90({\scriptsize Robert Gruendl })  &
-LVV-T202 ({\scriptsize Robert Gruendl }) \\
-\hline
- DMS-REQ-0191 &
- LVV-91({\scriptsize Robert Gruendl })  &
-LVV-T203 ({\scriptsize Kian-Tat Lim }) \\
-\hline
- DMS-REQ-0352 &
- LVV-183({\scriptsize Robert Gruendl })  &
-LVV-T192 ({\scriptsize Robert Gruendl }) \\
- \cdashline{2-3}  &
- LVV-18491({\scriptsize Robert Gruendl })  &
-LVV-T181 ({\scriptsize Robert Gruendl }) \\
-\hline
-\end{longtable}
+\section{Acronyms \label{sect:acronyms}} % include acronyms.tex generated by the generateAcronyms.py (in texmf/scripts)
+\input{acronyms}
+
+\end{document}

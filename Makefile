@@ -49,3 +49,6 @@ clean :
 	latexmk -c
 	rm *.pdf
 	rm -rf $(VENVDIR)
+
+details-doc:
+	latexmk -bibtex -xelatex -f Network-details.tex
