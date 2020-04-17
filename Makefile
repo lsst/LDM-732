@@ -2,6 +2,7 @@ DOCTYPE = LDM
 DOCNUMBER = 732
 DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
 JOBNAME = $(DOCNAME)
+TESTSPEC = LDM-639
 TEX = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
 #export TEXMFHOME = lsst-texmf/texmf
@@ -29,6 +30,7 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\lsstDocNum}{$(DOCNUMBER)}' >>$@
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
+	/bin/echo '\newcommand{\testspec}{$(TESTSPEC)}' >>$@
 
 #Traditional acronyms are better in this document
 acronyms.tex : ${TEX} myacronyms.txt skipacronyms.txt
