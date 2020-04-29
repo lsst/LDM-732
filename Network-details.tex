@@ -70,57 +70,57 @@ LVV-T1612 ({\scriptsize Jeff Kantor }) \\
  DMS-REQ-0172 &
   {\scriptsize \ref{lvv-74} } & LVV-74({\scriptsize Robert Gruendl })
  &
-LVV-T185 ({\scriptsize Robert Gruendl }) \\
+LVV-T185 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0173 &
   {\scriptsize \ref{lvv-75} } & LVV-75({\scriptsize Robert Gruendl })
  &
-LVV-T186 ({\scriptsize Robert Gruendl }) \\
+LVV-T186 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0174 &
   {\scriptsize \ref{lvv-76} } & LVV-76({\scriptsize Robert Gruendl })
  &
-LVV-T187 ({\scriptsize Robert Gruendl }) \\
+LVV-T187 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0175 &
   {\scriptsize \ref{lvv-77} } & LVV-77({\scriptsize Robert Gruendl })
  &
-LVV-T188 ({\scriptsize Robert Gruendl }) \\
+LVV-T188 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0180 &
   {\scriptsize \ref{lvv-81} } & LVV-81({\scriptsize Robert Gruendl })
  &
-LVV-T193 ({\scriptsize Robert Gruendl }) \\
+LVV-T193 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0181 &
   {\scriptsize \ref{lvv-82} } & LVV-82({\scriptsize Robert Gruendl })
  &
-LVV-T194 ({\scriptsize Robert Gruendl }) \\
+LVV-T194 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0182 &
   {\scriptsize \ref{lvv-83} } & LVV-83({\scriptsize Robert Gruendl })
  &
-LVV-T195 ({\scriptsize Robert Gruendl }) \\
+LVV-T195 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0183 &
   {\scriptsize \ref{lvv-84} } & LVV-84({\scriptsize Robert Gruendl })
  &
-LVV-T196 ({\scriptsize Robert Gruendl }) \\
+LVV-T196 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0188 &
   {\scriptsize \ref{lvv-88} } & LVV-88({\scriptsize Robert Gruendl })
  &
-LVV-T200 ({\scriptsize Robert Gruendl }) \\
+LVV-T200 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0189 &
   {\scriptsize \ref{lvv-89} } & LVV-89({\scriptsize Robert Gruendl })
  &
-LVV-T201 ({\scriptsize Robert Gruendl }) \\
+LVV-T201 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0190 &
   {\scriptsize \ref{lvv-90} } & LVV-90({\scriptsize Robert Gruendl })
  &
-LVV-T202 ({\scriptsize Robert Gruendl }) \\
+LVV-T202 ({\scriptsize Jeff Kantor }) \\
 \hline
  DMS-REQ-0191 &
   {\scriptsize \ref{lvv-91} } & LVV-91({\scriptsize Robert Gruendl })
@@ -130,11 +130,11 @@ LVV-T203 ({\scriptsize Kian-Tat Lim }) \\
  DMS-REQ-0352 &
   {\scriptsize \ref{lvv-183} } & LVV-183({\scriptsize Robert Gruendl })
  &
-LVV-T192 ({\scriptsize Robert Gruendl }) \\
+LVV-T192 ({\scriptsize Jeff Kantor }) \\
  \cdashline{2-4}  &
   {\scriptsize \ref{lvv-18491} } & LVV-18491({\scriptsize Robert Gruendl })
  &
-LVV-T181 ({\scriptsize Robert Gruendl }) \\
+LVV-T181 ({\scriptsize Jeff Kantor }) \\
 \hline
 \end{longtable}
 
@@ -196,7 +196,7 @@ OSS-REQ-0002 & The Summit Facility \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T1097] Verify Summit to Base Network Implementation }
+\subsubsection{[LVV-T1097] Verify Summit Facility Network Implementation }
 
 \begin{longtable}{cccccc}
 \hline
@@ -210,9 +210,9 @@ Jeff Kantor & Draft & 1 & false & Test
 
 \textbf{Objective:} \\
 Control the AuxTel through a night of Observing, read out data and
-transfer data to LSST Summit DWDM. Verify that data acquired by a AuxTel
-DAQ can be transferred to LSST Summit DWDM and loaded in EFD without
-problems.
+transfer data to Rubin Observatory Summit DWDM. Verify that data
+acquired by a AuxTel DAQ can be transferred to Summit DWDM and loaded in
+EFD without problems.
 
 \textbf{Precondition:} \\
 \begin{enumerate}
@@ -224,11 +224,13 @@ problems.
   Summit - Base Network installed and operating properly.
 \item
   AuxTel hardware and control systems are functional with LATISS. AuxTel
-  TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected via LSST Control
-  Network on Summit to LSST DWDM (with at least 2 x 10 Gbps ethernet
-  port client cards).
+  TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected via Control
+  Network on Summit to Rubin Observatory DWDM (with at least 2 x 10 Gbps
+  ethernet port client cards).
 \item
   AuxTel Archiver/forwarders installed in Summit and operating properly.
+\item
+  As-built documentation for all of the above is available.
 \end{enumerate}
 
 \textbf{Predecessors:} \\
@@ -236,8 +238,8 @@ PMCS DMTC-7400-2400 Complete\\
 PMCS T\&SC-2600-1545 Complete
 
 \textbf{Test Personnel:} \\
-Ron Lambert (LSST), Kian-Tat Lim (LSST), Matt Kollross (NCSA), Tony
-Johnson (SLAC), Gregg Thayer (SLAC)
+Ron Lambert (Rubin Observatory), Kian-Tat Lim (Rubin Observatory), Matt
+Kollross (NCSA), Tony Johnson (SLAC), Gregg Thayer (SLAC)
 
 \textbf{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
@@ -248,16 +250,69 @@ Johnson (SLAC), Gregg Thayer (SLAC)
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Verify the available documentation in order to ensure that the Summit to
-Base Network has been set-up and is working.
+Verify the pre-conditions have been satisfied
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
 \begin{minipage}[t]{13cm}{\scriptsize
-List of documents that demonstrate the network implementation
+Pre-conditions are satisfied.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Control the AuxTel through a night of Observing. ~While observing, read
+out LATISS data and transfer to Rubin Observatory Summit DWDM while
+monitoring latency.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+LATISS images and metadata
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data is fed to DWDM without delays or errors.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 3
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Verify that data acquired by a AuxTel DAQ can be transferred ~and loaded
+in EFD without problems.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+LATISS images and metadata
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Examine the EFD to ensure that the data has been loaded properly.
 
 \vspace{\dp0}
 } \end{minipage}
@@ -568,7 +623,7 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T185}{LVV-T185} &
-Robert Gruendl & Draft & 1 & false & Inspection
+Jeff Kantor & Draft & 1 & false & Inspection
 \\ \hline
 \end{longtable}
 
@@ -658,7 +713,7 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T186}{LVV-T186} &
-Robert Gruendl & Draft & 1 & false & Demonstration
+Jeff Kantor & Draft & 1 & false & Demonstration
 \\ \hline
 \end{longtable}
 
@@ -789,7 +844,7 @@ DMS-REQ-0172 & Summit to Base Network Availability \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T187}{LVV-T187} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -882,7 +937,7 @@ DMS-REQ-0172 & Summit to Base Network Availability \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T188}{LVV-T188} &
-Robert Gruendl & Draft & 1 & false & Inspection
+Jeff Kantor & Draft & 1 & false & Inspection
 \\ \hline
 \end{longtable}
 
@@ -971,7 +1026,7 @@ DMS-REQ-0162 & Pipeline Throughput \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T193}{LVV-T193} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1063,7 +1118,7 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T194}{LVV-T194} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1155,7 +1210,7 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T195}{LVV-T195} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1229,8 +1284,7 @@ Requirement Description & \textbf{Specification:} The Base to Archive communicat
 a secondary link or transport mechanism (e.g. protected circuit) for
 operations support and ``catch up'' in the event of extended outage
 which is capable of transferring data at least the same rate as the
-required minimum capacity of the primary link.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
+required minimum capacity of the primary link. \\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1250,7 +1304,7 @@ OSS-REQ-0049 & Degraded Operational States \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T196}{LVV-T196} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1356,7 +1410,7 @@ OSS-REQ-0004 & The Archive Facility \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T200}{LVV-T200} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1449,7 +1503,7 @@ Availability }
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T201}{LVV-T201} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1539,7 +1593,7 @@ Reliability }
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T202}{LVV-T202} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1740,9 +1794,10 @@ email, browse web, and retrieve files from the Internet.
 \hline
 \multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
 Requirement ID & DMS-REQ-0352 \\ \cdashline{1-2}
-Requirement Description & The Base LAN shall provide \textbf{minBaseWiFi} Wireless LAN (WiFi) and
-Wireless Access Points in the Base Facility to support connectivity of
-individual user's computers to the network backbones. \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Base LAN shall provide \textbf{minBaseWiFi}
+Wireless LAN (WiFi) and Wireless Access Points in the Base Facility to
+support connectivity of individual user's computers to the network
+backbones. \\ \cdashline{1-2}
 Requirement Parameters & \textbf{minBaseWifi = 1000{{[}megabit per second{]}}} Maximum allowable
 outage of active DM production. \\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
@@ -1762,7 +1817,7 @@ OSS-REQ-0003 & The Base Facility \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T192}{LVV-T192} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
@@ -1829,9 +1884,10 @@ jaggies on video, etc.). Test voice calls and videoconferening.
 \hline
 \multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
 Requirement ID & DMS-REQ-0352 \\ \cdashline{1-2}
-Requirement Description & The Base LAN shall provide \textbf{minBaseWiFi} Wireless LAN (WiFi) and
-Wireless Access Points in the Base Facility to support connectivity of
-individual user's computers to the network backbones. \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Base LAN shall provide \textbf{minBaseWiFi}
+Wireless LAN (WiFi) and Wireless Access Points in the Base Facility to
+support connectivity of individual user's computers to the network
+backbones. \\ \cdashline{1-2}
 Requirement Parameters & \textbf{minBaseWifi = 1000{{[}megabit per second{]}}} Maximum allowable
 outage of active DM production. \\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
@@ -1851,7 +1907,7 @@ OSS-REQ-0003 & The Base Facility \\
 \textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
 \textbf{Verification Type} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{LVV-T181} &
-Robert Gruendl & Draft & 1 & false & Test
+Jeff Kantor & Draft & 1 & false & Test
 \\ \hline
 \end{longtable}
 
