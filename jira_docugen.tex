@@ -69,10 +69,8 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Control the AuxTel through a night of Observing, read out data and
-transfer data to Rubin Observatory Summit DWDM. Verify that data
-acquired by a AuxTel DAQ can be transferred to Summit DWDM and loaded in
-EFD without problems.
+Verify that data acquired by a AuxTel DAQ can be transferred to Summit
+DWDM and loaded in the EFD without problems.
 }
 
  \newpage \subsection{[LVV-73] DMS-REQ-0171-V-01: Summit to Base Network }\label{lvv-73}
@@ -177,10 +175,8 @@ Jeff Kantor & Draft & 1 & false & Inspection \\ \hline
 {\scriptsize
 \textbf{Objective:}\\
 Verify ISO Layer 3 full (22 x 10 Gbps ethernet ports on DAQ side with
-test data from DAQ test stand, AURA, Camera DAQ team do test). Transfer
-data between summit and base over uninterrupted 1 day period.
-~Demonstrate transfer of data at or exceeding rates specified in
-\citeds{LDM-142}.
+test data from DAQ test stand, AURA, Camera DAQ team do test).
+Demonstrate transfer of data at or exceeding rates specified in \citeds{LDM-142}.
 }
 
  \newpage \subsection{[LVV-74] DMS-REQ-0172-V-01: Summit to Base Network Availability }\label{lvv-74}
@@ -199,11 +195,11 @@ LVV-T185 \\
 
 \textbf{Verification Element Description:} \\
 This requirement needs the network link to be active for a calculated
-amount of time (at least 1 week) without failure. Will require modeling
-as failures are rare. Monthly operating statistics will be acquired
-during commissioning. Demonstrate transfer of data at or exceeding rates
-specified in \citeds{LDM-142}, verify achieved average and peak throughput and
-latency.
+amount of time (at least 1 week) without failure. Will require
+extrapolating from test and historical data as failures are rare.
+Monthly operating statistics will be acquired during commissioning.
+Demonstrate transfer of data at or exceeding rates specified in \citeds{LDM-142},
+verify achieved average and peak throughput and latency.
 
 {\footnotesize
 \begin{longtable}{p{3cm}p{13cm}}
@@ -234,9 +230,9 @@ Jeff Kantor & Draft & 1 & false & Inspection \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Monitor summit to base networking ~for at least 1 week, model annual
-availability, and verify that the mean time between failures is less
-than summToBaseNetMTBF (90 days) over 1 year.
+Via monitoring and ~comparing with at least 6 months of historical data
+on the link, verify that the mean time between failures is less than
+summToBaseNetMTBF (90 days) over 1 year.
 }
 
  \newpage \subsection{[LVV-75] DMS-REQ-0173-V-01: Summit to Base Network Reliability }\label{lvv-75}
@@ -290,48 +286,11 @@ Jeff Kantor & Draft & 1 & false & Demonstration \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-This approach is necessitated by not wanting to actually cut the fiber
-just for test purposes:
-
-\begin{itemize}
-\tightlist
-\item
-  Pick a point on the network (Time Domain graph) and simulate a fault
-  (e.g. disconnect a cable).
-\item
-  Detect there a fault.
-\item
-  Diagnose that it is a break.
-\item
-  Measure the cable with the OTDR to locate the distance from the end
-  point.
-\item
-  Elapse time to simulate the following:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Go to the most inaccessible place which would mean carrying all the
-    tools/splicer/generator/tent equipment some ~metres.
-  \item
-    Erect a tent to make the splice
-  \item
-    Start the generator
-  \item
-    Do a splice on some random piece of cable
-  \item
-    At an end point measure the cable again to ensure it is break free.
-  \item
-    Take down and reinstall an isolate pole (not in the actual fiber
-    path)
-  \item
-    Put the cable on the pole.
-  \end{itemize}
-\item
-  Restore connection (e.g. reconnect cable)
-\item
-  Measure with OTDR to ensure back to normal state.\\[2\baselineskip]
-\end{itemize}
+After disconnecting fiber at an endpoint location on the base side of
+the ~summit - base fiber, demonstrate reconnection and recovery to
+transfer of data at or exceeding rates specified in \citeds{LDM-142} within MTTR
+specification. Network operator will provide MTTR data on links during
+commissioning and operations.\\[2\baselineskip]
 }
 
  \newpage \subsection{[LVV-76] DMS-REQ-0174-V-01: Summit to Base Network Secondary Link }\label{lvv-76}
@@ -388,18 +347,12 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Transfer data between summit and base on primary equipment (LSST Summit
-- Base) over uninterrupted 1 day period. ~Simulate outage by
-disconnecting fiber from equipment on primary and verify that network
-fails over to secondary equipment. ~Demonstrate transfer of data at or
-exceeding rates specified in \citeds{LDM-142} between summit and base over
-secondary equipment uninterrupted 1 day period (except for
-\textless{}=60s to fail-over to secondary and recover to primary
-connection execution). Verify that ~link is capable of transferring 1
-night of raw data (nCalibExpDay + nRawExpNightMax = 450 + 2800 = ~3250
-exposures) within summToBaseNet2TransMax (72 hours). Restore connection
-between fiber and primary equipment (i.e. reconnect primary), verify
-that network recovers to primary.
+Verify automated fail-over from primary to secondary equipment in Rubin
+Observatory DWDM on simulated failure of primary. ~Verify bandwidth
+sufficiency on secondary. ~Verify automated recovery to primary
+equipment on simulated restoration of primary. ~Repeat for failure of
+Rubin Observatory fiber and fail-over to AURA fiber and DWDM.
+~Demonstrate use of secondary in ``catch-up'' mode.
 }
 
  \newpage \subsection{[LVV-77] DMS-REQ-0175-V-01: Summit to Base Network Ownership and Operation }\label{lvv-77}
@@ -504,12 +457,10 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Transfer data between base and archive over uninterrupted 1 day period
-(with repeated transfers on normal observing cadence). Analyze the
-network and show that data acquired by a DAQ can be transferred within
-the required time, i.e. verify that link is capable of transferring
-image for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}.
-Verify transfer of data at or exceeding rates specified in \citeds{LDM-142}.
+Analyze the network and show that data acquired by a DAQ can be
+transferred within the required time, i.e. verify that link is capable
+of transferring image for prompt processing in oArchiveMaxTransferTime =
+5{[}second{]}, i.e. at or exceeding rates specified in \citeds{LDM-142}.
 }
 
  \newpage \subsection{[LVV-82] DMS-REQ-0181-V-01: Base to Archive Network Availability }\label{lvv-82}
@@ -560,13 +511,10 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Transfer data between base and archive over uninterrupted 1 week period.
-~Extrapolate to a full year to estimate if expect to meet
-baseToArchNetMTBF = 180{[}day{]}. ~Note that this is for complete loss
-of transfer service (all paths), not a single path failure with
-successful fail-over. Demonstrate transfer of data at or exceeding rates
-specified in \citeds{LDM-142}, verify achieved average and peak throughput and
-latency.
+From test and historical data, extrapolate to a full year to estimate if
+expect to meet baseToArchNetMTBF = 180{[}day{]}. ~Note that this is for
+complete loss of transfer service (simultaneous failure on all paths),
+not a single path failure with successful fail-over.
 }
 
  \newpage \subsection{[LVV-83] DMS-REQ-0182-V-01: Base to Archive Network Reliability }\label{lvv-83}
@@ -616,11 +564,8 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Disconnect, reconnect and recover transfer of data between base and
-archive, after disconnecting fiber at an intermediate location between
-base and archive. Verify recovery can occur within baseToArchNetMTTR =
-48{[}hour{]}. Demonstrate reconnection and recovery to transfer of data
-at or exceeding rates specified in \citeds{LDM-142}.
+After disconnecting fiber at a location in the Base - Archive, network,
+verify recovery can occur within baseToArchNetMTTR = 48{[}hour{]}.
 }
 
  \newpage \subsection{[LVV-84] DMS-REQ-0183-V-01: Base to Archive Network Secondary Link }\label{lvv-84}
@@ -673,17 +618,10 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-FOR EACH SEGMENT (LS ~- SCL, SCL - FL, FL - CHI, ~CHI - CHMPGN):
-Transfer data between base and archive on primary links over
-uninterrupted 1 day period. ~Simulate outage by disconnecting fiber on
-primary and verify that network fails over to secondary links. ~Transfer
-data between base and archive over secondary equipment uninterrupted 1
-day period. ~Restore connection on primary link verify that network
-recovers to primary. Transfer data between base and archive on primary
-links over uninterrupted 1 day period. Demonstrate transfer of data at
-or exceeding rates specified in \citeds{LDM-142} throughout fail-over period
-except for \textless{}=60s fail-over fail-over to secondary and recover
-to primary connection execution.
+~Simulate outage on primary and verify fail over to secondary link and
+capacity on secondary link, restore primary link and verify that network
+recovers to primary. Demonstrate use of secondary path in ``catch-up''
+mode.
 }
 
  \newpage \subsection{[LVV-88] DMS-REQ-0188-V-01: Archive to Data Access Center Network }\label{lvv-88}
@@ -738,12 +676,9 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Transfer data between archive and both DACs over uninterrupted 1 day
-period ~(data can be simulated, i.e. files of similar size and quantity
-to real data). ~Verify can meet archToDacBandwidth = 10000{[}megabit per
-second{]}. Analyze the network and show that data can be transferred
-within the required time. Demonstrate transfer of data at or exceeding
-rates specified in \citeds{LDM-142}.
+Monitor and analyze data transfers to verify networks can transfer data
+at archToDacBandwidth = 10000{[}megabit per second{]}, i.e. at or
+exceeding rates specified in \citeds{LDM-142}.
 }
 
  \newpage \subsection{[LVV-89] DMS-REQ-0189-V-01: Archive to Data Access Center Network Availability }\label{lvv-89}
@@ -796,11 +731,8 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Transfer data between archive and DACs over uninterrupted 1 week period.
-~Extrapolate to 1 year to estimate can meet archToDacNetMTBF =
-180{[}day{]}. Demonstrate transfer of data at or exceeding rates
-specified in \citeds{LDM-142}, verify achieved average and peak throughput and
-latency.
+From test and historical data, extrapolate to 1 year to estimate
+networks meet archToDacNetMTBF = 180{[}day{]}.
 }
 
  \newpage \subsection{[LVV-90] DMS-REQ-0190-V-01: Archive to Data Access Center Network Reliability }\label{lvv-90}
@@ -851,11 +783,11 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Reconnect and recover transfer of data between archive and DACs, after
-disconnecting fiber at an intermediate location between archive and
-DACs. Verify can meet chToDacNetMTTR = 48{[}hour{]}. Demonstrate
-reconnection and recovery to transfer of data at or exceeding rates
-specified in \citeds{LDM-142}.
+After disconnecting fiber locations on the Archive to DACs primary path,
+verify fail-over to secondary path and capacity on secondary path.
+~After reconnecting primary path, recovery of transfer of data on
+primary path, and verify recovery can meet chToDacNetMTTR =
+48{[}hour{]}.
 }
 
  \newpage \subsection{[LVV-91] DMS-REQ-0191-V-01: Archive to Data Access Center Network Secondary Link }\label{lvv-91}
@@ -906,17 +838,7 @@ Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-FOR EACH SEGMENT (LS ~- SCL, SCL - FL, FL - CHI, ~CHI - CHMPGN):
-Transfer data between base and archive on primary links over
-uninterrupted 1 day period. ~Simulate outage by disconnecting fiber on
-primary and verify that network fails over to secondary links. ~Transfer
-data between base and archive over secondary equipment uninterrupted 1
-day period. ~Restore connection on primary link verify that network
-recovers to primary. Transfer data between base and archive on primary
-links over uninterrupted 1 day period. Demonstrate transfer of data at
-or exceeding rates specified in \citeds{LDM-142} throughout fail-over period
-except for \textless{}=60s fail-over fail-over to secondary and recover
-to primary connection execution.
+
 }
 
  \newpage \subsection{[LVV-183] DMS-REQ-0352-V-01: Base Wireless LAN (WiFi) }\label{lvv-183}
@@ -966,11 +888,8 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Verify (a) plannned and (b) as-built wireless network at the Base
-Facility supports minBaseWiFi bandwidth (1000 Mbs). Test internet web
-browsing and file download, email at summit and base over wireless.
-Verify wireless signal strength meets or exceeds typical, and average
-and peak bandwidths meet or exceed minBaseWiFI bandwidth.
+Verify as-built wireless network at the Base Facility supports
+minBaseWiFi bandwidth (1000 Mbs).
 }
 
  \newpage \subsection{[LVV-18491] DMS-REQ-0352-V-02: Base Voice Over IP (VOIP) }\label{lvv-18491}
@@ -1022,10 +941,10 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \end{longtable}
 {\scriptsize
 \textbf{Objective:}\\
-Verify (a) plannned and (b) as-built VOIP at the Base Facility is
-operational and performs as expected (i.e. sufficient number of
-extensions allocated properly, no frequent drop-outs, no frequent
-jaggies on video, etc.). Test voice calls and videoconferening.
+Verify as-built VOIP at the Base Facility is operational and performs as
+expected (i.e. sufficient number of extensions allocated properly, no
+frequent drop-outs, no frequent jaggies on video, etc.) on both voice
+calls and videoconferening.
 }
 
 

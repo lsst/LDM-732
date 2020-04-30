@@ -209,10 +209,8 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Control the AuxTel through a night of Observing, read out data and
-transfer data to Rubin Observatory Summit DWDM. Verify that data
-acquired by a AuxTel DAQ can be transferred to Summit DWDM and loaded in
-EFD without problems.
+Verify that data acquired by a AuxTel DAQ can be transferred to Summit
+DWDM and loaded in the EFD without problems.
 
 \textbf{Precondition:} \\
 \begin{enumerate}
@@ -536,10 +534,8 @@ Jeff Kantor & Draft & 1 & false & Inspection
 
 \textbf{Objective:} \\
 Verify ISO Layer 3 full (22 x 10 Gbps ethernet ports on DAQ side with
-test data from DAQ test stand, AURA, Camera DAQ team do test). Transfer
-data between summit and base over uninterrupted 1 day period.
-~Demonstrate transfer of data at or exceeding rates specified in
-\citeds{LDM-142}.
+test data from DAQ test stand, AURA, Camera DAQ team do test).
+Demonstrate transfer of data at or exceeding rates specified in \citeds{LDM-142}.
 
 \textbf{Precondition:} \\
 PMCS DMTC-7400-2400 COMPLETE\\
@@ -666,9 +662,8 @@ Jeff Kantor & Draft & 1 & false & Inspection
 \end{longtable}
 
 \textbf{Objective:} \\
-Monitor summit to base networking for at least 1 week, model annual
-availability, compare with at least 6 months of historical data on the
-link, and verify that the mean time between failures is less than
+Via monitoring and ~comparing with at least 6 months of historical data
+on the link, verify that the mean time between failures is less than
 summToBaseNetMTBF (90 days) over 1 year.
 
 \textbf{Precondition:} \\
@@ -796,9 +791,8 @@ Jeff Kantor & Draft & 1 & false & Demonstration
 \end{longtable}
 
 \textbf{Objective:} \\
-Disconnect, reconnect and recover transfer of data between summit and
-base. After disconnecting fiber at an endpoint location on the base side
-of the ~summit - base fiber, demonstrate reconnection and recovery to
+After disconnecting fiber at an endpoint location on the base side of
+the ~summit - base fiber, demonstrate reconnection and recovery to
 transfer of data at or exceeding rates specified in \citeds{LDM-142} within MTTR
 specification. Network operator will provide MTTR data on links during
 commissioning and operations.\\[2\baselineskip]
@@ -1023,6 +1017,7 @@ Observatory DWDM on simulated failure of primary. ~Verify bandwidth
 sufficiency on secondary. ~Verify automated recovery to primary
 equipment on simulated restoration of primary. ~Repeat for failure of
 Rubin Observatory fiber and fail-over to AURA fiber and DWDM.
+~Demonstrate use of secondary in ``catch-up'' mode.
 
 \textbf{Precondition:} \\
 PMCS DMTC-7400-2400 complete.\\
@@ -1208,6 +1203,31 @@ Network recovers to Rubin Observatory fiber and DWDM.
 } \end{minipage}
 \\ \hdashline
         \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 8
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Demonstrate use of secondary in ``catch-up'' mode.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+DAQ data buffer full of images and associated meta-data
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Images from DAQ buffer and associated metadata are retrievable over
+secondary path while current observing data is being transferred over
+primary path.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
     \end{longtable}
 
 
@@ -1361,12 +1381,10 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Transfer data between base and archive over uninterrupted 1 day period
-(with repeated transfers on normal observing cadence). Analyze the
-network and show that data acquired by a DAQ can be transferred within
-the required time, i.e. verify that link is capable of transferring
-image for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}.
-Verify transfer of data at or exceeding rates specified in \citeds{LDM-142}.
+Analyze the network and show that data acquired by a DAQ can be
+transferred within the required time, i.e. verify that link is capable
+of transferring image for prompt processing in oArchiveMaxTransferTime =
+5{[}second{]}, i.e. at or exceeding rates specified in \citeds{LDM-142}.
 
 \textbf{Precondition:} \\
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
@@ -1489,13 +1507,10 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Transfer data between base and archive over uninterrupted 1 week period.
-~Extrapolate to a full year to estimate if expect to meet
-baseToArchNetMTBF = 180{[}day{]}. ~Note that this is for complete loss
-of transfer service (all paths), not a single path failure with
-successful fail-over. Demonstrate transfer of data at or exceeding rates
-specified in \citeds{LDM-142}, verify achieved average and peak throughput and
-latency.
+From test and historical data, extrapolate to a full year to estimate if
+expect to meet baseToArchNetMTBF = 180{[}day{]}. ~Note that this is for
+complete loss of transfer service (simultaneous failure on all paths),
+not a single path failure with successful fail-over.
 
 \textbf{Precondition:} \\
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
@@ -1620,11 +1635,8 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Disconnect, reconnect and recover transfer of data between base and
-archive, after disconnecting fiber at an intermediate location between
-base and archive. Verify recovery can occur within baseToArchNetMTTR =
-48{[}hour{]}. Demonstrate reconnection and recovery to transfer of data
-at or exceeding rates specified in \citeds{LDM-142}.
+After disconnecting fiber at a location in the Base - Archive, network,
+verify recovery can occur within baseToArchNetMTTR = 48{[}hour{]}.
 
 \textbf{Precondition:} \\
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
@@ -1794,11 +1806,10 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Transfer data between base and archive on primary links over
-uninterrupted 1 day period, simulate outage and fail over to secondary
-links. ~Transfer data between base and archive over secondary equipment
-uninterrupted 1 day period. ~Restore connection on primary link verify
-that network recovers to primary.
+~Simulate outage on primary and verify fail over to secondary link and
+capacity on secondary link, restore primary link and verify that network
+recovers to primary. Demonstrate use of secondary path in ``catch-up''
+mode.
 
 \textbf{Precondition:} \\
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
@@ -1921,6 +1932,31 @@ Network recovers to primary.
 } \end{minipage}
 \\ \hdashline
         \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 5
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Demonstrate use of secondary in catch-up mode.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+DAQ buffer full of images and associated metadata.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Images from DAQ buffer and associated metadata are retrievable over
+secondary path while current observing data is being transferred over
+primary path.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
     \end{longtable}
 
 
@@ -1980,16 +2016,15 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Transfer data between archive and both DACs over uninterrupted 1 day
-period ~(data can be simulated, i.e. files of similar size and quantity
-to real data). ~Verify can meet archToDacBandwidth = 10000{[}megabit per
-second{]}. Analyze the network and show that data can be transferred
-within the required time. Demonstrate transfer of data at or exceeding
-rates specified in \citeds{LDM-142}.
+Monitor and analyze data transfers to verify networks can transfer data
+at archToDacBandwidth = 10000{[}megabit per second{]}, i.e. at or
+exceeding rates specified in \citeds{LDM-142}.
 
 \textbf{Precondition:} \\
 Data is staged in LDF and data transfer capabilities to US DAC and
 Chilean DAC are in place.\\
+At least 6 months of historical monitoring data is available on these
+network links.\\
 As-built documentation for all of the above is available.
 
 \textbf{Predecessors:} \\
@@ -2008,13 +2043,48 @@ Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Delegate to Networks
+Transfer data from Data Facility to US and Chilean DACs over an
+uninterrupted 1 week period.\\[2\baselineskip]
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data Release
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data transfers without significant failures or extended latency spikes
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Analyze network logs and compare with historical data on the links.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+The networks can transfer data at archToDacBandwidth = 10000{[}megabit
+per second{]}, i.e. at or exceeding rates specified in LDM-142.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
     \end{longtable}
@@ -2074,15 +2144,14 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Transfer data between archive and DACs over uninterrupted 1 week period.
-~Extrapolate to 1 year to estimate can meet archToDacNetMTBF =
-180{[}day{]}. Demonstrate transfer of data at or exceeding rates
-specified in \citeds{LDM-142}, verify achieved average and peak throughput and
-latency.
+From test and historical data, extrapolate to 1 year to estimate
+networks meet archToDacNetMTBF = 180{[}day{]}.
 
 \textbf{Precondition:} \\
 Data is staged in LDF and data transfer capabilities to US DAC and
 Chilean DAC are in place.\\
+At least 6 months of historical monitoring data is available on these
+network links.\\
 As-built documentation for all of the above is available.
 
 \textbf{Predecessors:} \\
@@ -2101,13 +2170,48 @@ Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Delegate to Networks
+Transfer data between archive and DACs over uninterrupted 1 week period.
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data Release or petabyte-scale test data set
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data transfers without failures or extended latency spikes
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Analyze test data and compare to historical data. Extrapolate to 1 year
+testimate of MTBF.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Networks can meet archToDacNetMTBF = 180{[}day{]} at or exceeding rates
+specified in LDM-142.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
     \end{longtable}
@@ -2165,11 +2269,11 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Reconnect and recover transfer of data between archive and DACs, after
-disconnecting fiber at an intermediate location between archive and
-DACs. Verify can meet chToDacNetMTTR = 48{[}hour{]}. Demonstrate
-reconnection and recovery to transfer of data at or exceeding rates
-specified in \citeds{LDM-142}.
+After disconnecting fiber locations on the Archive to DACs primary path,
+verify fail-over to secondary path and capacity on secondary path.
+~After reconnecting primary path, recovery of transfer of data on
+primary path, and verify recovery can meet chToDacNetMTTR =
+48{[}hour{]}.
 
 \textbf{Precondition:} \\
 Data is staged in LDF and data transfer capabilities to US DAC and
@@ -2192,7 +2296,75 @@ Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Delegate to Networks
+Simulate failure on primary paths by disconnecting fiber at an endpoint
+location in the archive on the Archive - ~DACs network.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Networks fail over to secondary paths.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Monitor transfers on secondary paths for 1 day.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Transfers occur without extended failures or extended latency spikes.
+~Data transfers on secondary at rates at or above those specified in
+LDM-142.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 3
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Simulate repair and recovery period by leaving primary fiber
+disconnected for at least 1 day, then reconnecting primary fiber.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Wall clock advances by 1 day. ~Network recovers to primary path. ~Verify
+entire process meets chToDacNetMTTR = 48{[}hour{]}.
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 4
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
@@ -2256,17 +2428,7 @@ Kian-Tat Lim & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-FOR EACH SEGMENT (LS ~- SCL, SCL - FL, FL - CHI, ~CHI - CHMPGN):
-Transfer data between base and archive on primary links over
-uninterrupted 1 day period. ~Simulate outage by disconnecting fiber on
-primary and verify that network fails over to secondary links. ~Transfer
-data between base and archive over secondary equipment uninterrupted 1
-day period. ~Restore connection on primary link verify that network
-recovers to primary. Transfer data between base and archive on primary
-links over uninterrupted 1 day period. Demonstrate transfer of data at
-or exceeding rates specified in \citeds{LDM-142} throughout fail-over period
-except for \textless{}=60s fail-over fail-over to secondary and recover
-to primary connection execution.
+
 
 \textbf{Precondition:} \\
 Data is staged in LDF and data transfer capabilities to US DAC and
@@ -2289,52 +2451,98 @@ Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Take primary network link down
+Transfer data between Archive and DACs on primary path over
+uninterrupted 1 week period.
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data Release or other petabyte-scale test data set.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data transfers without failures or extended latency spikes, at or
+exceeding rates specified in LDM-142 throughout fail-over period.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
             \multirow{3}{*}{\parbox{1.3cm}{ 2
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Observe operations support over secondary link
+Simulate outage on primary path by disconnecting fiber on primary on
+Archive side of Archive - DACs networks.
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Network fails over to secondary links in \textless{}=
+60s.\\[2\baselineskip]
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
             \multirow{3}{*}{\parbox{1.3cm}{ 3
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Bring primary network link back up
+Transfer data between base and archive over secondary equipment
+uninterrupted 1 day period.
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data Release or other petabyte-scale test data set.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Data transfers without failures or extended latency spikes, ~at or
+exceeding rates specified in LDM-142 throughout fail-over period.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
             \multirow{3}{*}{\parbox{1.3cm}{ 4
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Observe catch-up capability over secondary link
+Restore connection on primary link (reconnect fiber).
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Network recovers to primary in \textless{}= 60s.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
     \end{longtable}
@@ -2391,11 +2599,8 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Verify (a) plannned and (b) as-built wireless network at the Base
-Facility supports minBaseWiFi bandwidth (1000 Mbs). Test internet web
-browsing and file download, email at summit and base over wireless.
-Verify wireless signal strength meets or exceeds typical, and average
-and peak bandwidths meet or exceed minBaseWiFI bandwidth.
+Verify as-built wireless network at the Base Facility supports
+minBaseWiFi bandwidth (1000 Mbs).
 
 \textbf{Precondition:} \\
 Base Wireless LAN is installed/configured and Test Personnel have
@@ -2417,13 +2622,27 @@ Heinrich Reinking (LSST)
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Delegate to Networks
+Test internet web browsing and file download, email at summit and base
+over wireless.
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
+\begin{minipage}[t]{13cm}{\scriptsize
+NA
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Verify as-built wireless network at the Base Facility supports
+minBaseWiFi bandwidth (1000 Mbs). Verify wireless signal strength meets
+or exceeds typical, and average and peak bandwidths meet or exceed
+minBaseWiFI bandwidth.
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
     \end{longtable}
@@ -2482,10 +2701,10 @@ Jeff Kantor & Draft & 1 & false & Test
 \end{longtable}
 
 \textbf{Objective:} \\
-Verify (a) plannned and (b) as-built VOIP at the Base Facility is
-operational and performs as expected (i.e. sufficient number of
-extensions allocated properly, no frequent drop-outs, no frequent
-jaggies on video, etc.). Test voice calls and videoconferening.
+Verify as-built VOIP at the Base Facility is operational and performs as
+expected (i.e. sufficient number of extensions allocated properly, no
+frequent drop-outs, no frequent jaggies on video, etc.) on both voice
+calls and videoconferening.
 
 \textbf{Precondition:} \\
 Base VOIP is installed/configured and Test Personnel have phone sets.
@@ -2511,13 +2730,42 @@ Headquarters, or LDF
 } }
 & {\small Description} &
 \begin{minipage}[t]{13cm}{\scriptsize
-Delegate to Networks
+Test voice calls over VOIP system from Base Facility to locations in
+~Base and to other Rubin Observatory facilities.
 
 \vspace{\dp0}
 } \end{minipage} \\ \cdashline{2-3}
 & {\small Test Data} &
 \\ \cdashline{2-3}
 & {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+As-built VOIP at the Base Facility is operational and performs as
+expected (i.e. sufficient number of extensions allocated properly, no
+frequent drop-outs, etc.).
+
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
+        \\ \midrule
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Test video conferences over ~system from Base Facility to locations in
+Base and to other Rubin Observatory facilities.
+
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Verify (a) plannned and (b) as-built VOIP at the Base Facility is
+operational and performs as expected (i.e. no frequent drop-outs, no
+frequent audio glitches, no frequent jaggies on video, etc.).
+
+\vspace{\dp0}
+} \end{minipage}
 \\ \hdashline
         \\ \midrule
     \end{longtable}
