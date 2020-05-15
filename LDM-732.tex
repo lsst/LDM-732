@@ -8,12 +8,14 @@
 \usepackage{lipsum}
 
 
-\input meta.tex
+\input{meta.tex}
 
 %\input{aglossary.tex}
 %\makeglossaries
 
 \DeclareRobustCommand{\cmdkey}{\raisebox{-.035em}{\includegraphics[height=.75em]{figures/cmdkey}}}
+
+\setcounter{tocdepth}{2}
 
 \begin{document}
 
@@ -24,7 +26,7 @@
 
 \setDocCompact{true}
 
-\title[Network Verification Document]{Vera C. Rubin Network Verification Document}
+\title[Network Verification Document]{Vera C. Rubin Observatory Network Verification Document}
 
 \author{Jeff Kantor}
 \setDocRef{\lsstDocType-\lsstDocNum}
@@ -41,8 +43,9 @@ System Integration Test (SIT)
 
 % Most recent last
 \setDocChangeRecord{%
-	\addtohist{}{2020-01-28}{First draft}{J.~Kantor}
+	\addtohist{1.0}{2020-05-15}{Document approved (\jira{RFC-674})}{J.~Kantor}
 	\addtohist{}{2020-02-21}{Document ready for CCB approval}{J.~Kantor}
+	\addtohist{}{2020-01-28}{First draft}{J.~Kantor}
 }
 
 \setDocUpstreamLocation{\url{https://github.com/lsst/ldm-732}}
