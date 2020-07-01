@@ -8,12 +8,12 @@
 \begin{longtable}{cccc}
 \hline
 \textbf{Requirements} & & \textbf{Verification Elements} & \textbf{Test Cases} \\ \hline
- DMS-REQ-0168 &
+ DMS-REQ-0168  &
   {\scriptsize \ref{lvv-71} } & LVV-71({\scriptsize Gregory Dubois-Felsmann })
  &
 LVV-T1097 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0171 &
+ DMS-REQ-0171  &
   {\scriptsize \ref{lvv-73} } & LVV-73({\scriptsize Robert Gruendl })
  &
 LVV-T1168 ({\scriptsize Jeff Kantor }) \\
@@ -22,67 +22,67 @@ LVV-T1168 ({\scriptsize Jeff Kantor }) \\
  &
 LVV-T1612 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0172 &
+ DMS-REQ-0172  &
   {\scriptsize \ref{lvv-74} } & LVV-74({\scriptsize Robert Gruendl })
  &
 LVV-T185 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0173 &
+ DMS-REQ-0173  &
   {\scriptsize \ref{lvv-75} } & LVV-75({\scriptsize Robert Gruendl })
  &
 LVV-T186 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0174 &
+ DMS-REQ-0174  &
   {\scriptsize \ref{lvv-76} } & LVV-76({\scriptsize Robert Gruendl })
  &
 LVV-T187 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0175 &
+ DMS-REQ-0175  &
   {\scriptsize \ref{lvv-77} } & LVV-77({\scriptsize Robert Gruendl })
  &
 LVV-T188 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0180 &
+ DMS-REQ-0180  &
   {\scriptsize \ref{lvv-81} } & LVV-81({\scriptsize Robert Gruendl })
  &
 LVV-T193 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0181 &
+ DMS-REQ-0181  &
   {\scriptsize \ref{lvv-82} } & LVV-82({\scriptsize Robert Gruendl })
  &
 LVV-T194 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0182 &
+ DMS-REQ-0182  &
   {\scriptsize \ref{lvv-83} } & LVV-83({\scriptsize Robert Gruendl })
  &
 LVV-T195 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0183 &
+ DMS-REQ-0183  &
   {\scriptsize \ref{lvv-84} } & LVV-84({\scriptsize Robert Gruendl })
  &
 LVV-T196 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0188 &
+ DMS-REQ-0188  &
   {\scriptsize \ref{lvv-88} } & LVV-88({\scriptsize Robert Gruendl })
  &
 LVV-T200 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0189 &
+ DMS-REQ-0189  &
   {\scriptsize \ref{lvv-89} } & LVV-89({\scriptsize Robert Gruendl })
  &
 LVV-T201 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0190 &
+ DMS-REQ-0190  &
   {\scriptsize \ref{lvv-90} } & LVV-90({\scriptsize Robert Gruendl })
  &
 LVV-T202 ({\scriptsize Jeff Kantor }) \\
 \hline
- DMS-REQ-0191 &
+ DMS-REQ-0191  &
   {\scriptsize \ref{lvv-91} } & LVV-91({\scriptsize Robert Gruendl })
  &
 LVV-T203 ({\scriptsize Kian-Tat Lim }) \\
 \hline
- DMS-REQ-0352 &
+ DMS-REQ-0352  &
   {\scriptsize \ref{lvv-183} } & LVV-183({\scriptsize Robert Gruendl })
  &
 LVV-T192 ({\scriptsize Jeff Kantor }) \\
@@ -90,6 +90,12 @@ LVV-T192 ({\scriptsize Jeff Kantor }) \\
   {\scriptsize \ref{lvv-18491} } & LVV-18491({\scriptsize Robert Gruendl })
  &
 LVV-T181 ({\scriptsize Jeff Kantor }) \\
+\hline
+\hline
+\hline
+\hline
+\hline
+\hline
 \hline
 \end{longtable}
 
@@ -104,7 +110,7 @@ The following is the list of verification elements defined in the context of the
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-71}{LVV-71} &
-Gregory Dubois-Felsmann & Not Covered & 1a &
+Gregory Dubois-Felsmann & Covered & 1a &
 \begin{tabular}{c}
 LVV-T1097 \\
 \end{tabular}
@@ -176,15 +182,30 @@ DWDM and loaded in the EFD without problems.
 \item
   Summit - Base Network installed and operating properly.
 \item
-  AuxTel hardware and control systems are functional with LATISS. AuxTel
-  TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected via Control
-  Network on Summit to Rubin Observatory DWDM (with at least 2 x 10 Gbps
-  ethernet port client cards).
+  EITHER: AuxTel hardware and control systems are functional with
+  LATISS. AuxTel TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected
+  via Control Network on Summit to Rubin Observatory DWDM (with at least
+  2 x 10 Gbps ethernet port client cards) OR: high-quality DAQ
+  application-level simulators that match the form, volume, file paths,
+  compressibility, and cadence of the expected instrument data, running
+  on end node computers that are the production hardware or equivalent
+  to it. Scientific validity of the data content is not essential.
 \item
-  AuxTel Archiver/forwarders installed in Summit and operating properly.
+  AuxTel Archiver/forwarders installed in Summit and operating properly
+  running on end node computers that are the production hardware or
+  equivalent to it.
 \item
   As-built documentation for all of the above is available.
 \end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. ~Final verification will be tested at full operational
+volume. After the initial test, the corresponding verification elements
+will be flagged as ``Requires Monitoring'' such that those requirements
+will be closed out as having been verified but will continue to be
+monitored throughout commissioning to ensure they do not drop out of
+compliance.
 
 \textbf{Predecessors:} \\
 PMCS DMTC-7400-2400 Complete\\
@@ -278,7 +299,7 @@ Examine the EFD to ensure that the data has been loaded properly.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1a &
 \begin{tabular}{c}
 LVV-T1168 \\
 LVV-T1612 \\
@@ -487,13 +508,35 @@ test data from DAQ test stand, AURA, Camera DAQ team do test).
 Demonstrate transfer of data at or exceeding rates specified in \citeds{LDM-142}.
 
 \textbf{Precondition:} \\
-PMCS DMTC-7400-2400 COMPLETE\\
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/1401}{LVV-T1168}
-Passed\\
-Full Camera DAQ installed on summit and loaded with data.\\
-Archiver/forwarders installed at Base.\\
-As-built documentation for all of the above is
-available.\\[2\baselineskip]
+\begin{enumerate}
+\tightlist
+\item
+  PMCS DMTC-7400-2400 COMPLETE
+\item
+  \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/1401}{LVV-T1168}
+  Passed
+\item
+  EITHER: Full Camera DAQ installed on summit and loaded with data OR:
+  high-quality DAQ application-level simulators that match the form,
+  volume, file paths, compressibility, and cadence of the expected
+  instrument data, running on end node computers that are the production
+  hardware or equivalent to it. Scientific validity of the data content
+  is not essential.
+\item
+  Archiver/forwarders installed at Base running on end node computers
+  that are the production hardware or equivalent to it.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. Final verification will be tested at full operational
+volume.After the initial test, the corresponding verification elements
+will be flagged as ``Requires Monitoring'' such that those requirements
+will be closed out as having been verified but will continue to be
+monitored throughout commissioning to ensure they do not drop out of
+compliance.
 
 \textbf{Predecessors:} \\
 See pre-conditions.
@@ -560,7 +603,7 @@ Data transfers at or exceeding rates specified in LDM-142.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-74}{LVV-74} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T185 \\
 \end{tabular}
@@ -614,11 +657,23 @@ the mean time between failures is less than summToBaseNetMTBF (90 days)
 over 1 year.
 
 \textbf{Precondition:} \\
-PMCS DMTC-7400-2400 Complete.\\
-6 months of historical availability data for this link is available.\\
-perSonar installed in Summit and publishing statistics to MadDash.\\
-As-built documentation for all of the above is
-available.\\[2\baselineskip]
+\begin{enumerate}
+\tightlist
+\item
+  PMCS DMTC-7400-2400 Complete.
+\item
+  6 months of historical availability data for this link is available.
+\item
+  perSonar installed in Summit and publishing statistics to MadDash.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOE: After the initial test, the corresponding verification elements
+will be flagged as ``Requires Monitoring'' such that those requirements
+will be closed out as having been verified but will continue to be
+monitored throughout commissioning to ensure they do not drop out of
+compliance.
 
 \textbf{Predecessors:} \\
 See pre-conditions.
@@ -687,7 +742,7 @@ summToBaseNetMTBF (90 days) over 1 year.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-75}{LVV-75} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T186 \\
 \end{tabular}
@@ -743,8 +798,19 @@ specification. The network operator will provide MTTR data on links
 during commissioning and operations.\\[2\baselineskip]
 
 \textbf{Precondition:} \\
-PMCS DMTC-7400-2400 Complete\\
-As-built documentation for Summit - Base Network is available.
+\begin{enumerate}
+\tightlist
+\item
+  PMCS DMTC-7400-2400 Complete
+\item
+  As-built documentation for Summit - Base Network is available.
+\end{enumerate}
+
+NOTE: After the initial test, the corresponding verification elements
+will be flagged as ``Requires Monitoring'' such that those requirements
+will be closed out as having been verified but will continue to be
+monitored throughout commissioning to ensure they do not drop out of
+compliance.
 
 \textbf{Predecessors:} \\
 See pre-conditions.
@@ -903,7 +969,7 @@ OTDR indicates normal state.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-76}{LVV-76} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T187 \\
 \end{tabular}
@@ -963,8 +1029,19 @@ Rubin Observatory fiber and fail-over to AURA fiber and DWDM.
 ~Demonstrate use of secondary in ``catch-up'' mode.
 
 \textbf{Precondition:} \\
-PMCS DMTC-7400-2400 complete.\\
-As-built documentation for Summit - Base Network is available.
+\begin{enumerate}
+\tightlist
+\item
+  PMCS DMTC-7400-2400 complete.
+\item
+  As-built documentation for Summit - Base Network is available.
+\end{enumerate}
+
+NOTE: After the initial test, the corresponding verification elements
+will be flagged as ``Requires Monitoring'' such that those requirements
+will be closed out as having been verified but will continue to be
+monitored throughout commissioning to ensure they do not drop out of
+compliance.
 
 \textbf{Predecessors:} \\
 See pre-conditions.
@@ -1178,7 +1255,7 @@ primary path.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-77}{LVV-77} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T188 \\
 \end{tabular}
@@ -1227,8 +1304,12 @@ operations entity by inspection of construction and operations contracts
 and Indefeasible Rights.
 
 \textbf{Precondition:} \\
-As-built documentation for all of the above contracts and IRUs is
-available.
+\begin{enumerate}
+\tightlist
+\item
+  As-built documentation for all of the above contracts and IRUs is
+  available.
+\end{enumerate}
 
 \textbf{Predecessors:} \\
 PMCS DMTC-7400-2140, -2240, -2330 Complete
@@ -1271,7 +1352,7 @@ on AURA property.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-81}{LVV-81} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T193 \\
 \end{tabular}
@@ -1327,17 +1408,35 @@ for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}, i.e.
 at or exceeding rates specified in \citeds{LDM-142}.
 
 \textbf{Precondition:} \\
-Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-loaded with simulated or pre-cursor data.\\
-Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+  loaded with simulated or pre-cursor data, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  Archiver/Forwarder receivers or other capability is on configured at
+  LDF, connected to Base - Archive Network, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. ~Final verification will be tested at full operational
+volume. After the initial test, the corresponding verification elements
+will be flagged as ``Requires Monitoring'' such that those requirements
+will be closed out as having been verified but will continue to be
+monitored throughout commissioning to ensure they do not drop out of
+compliance.
 
 \textbf{Predecessors:} \\
 PMCS DM-Net-5 Complete
 
 \textbf{Test Personnel:} \\
-Ron Lambert (LSST)
+Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
+(NCSA)
 
 \textbf{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
@@ -1399,7 +1498,7 @@ exceeding rates specified in LDM-142 at least 98\% of the time.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-82}{LVV-82} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T194 \\
 \end{tabular}
@@ -1451,19 +1550,37 @@ measured over a 1-yr period of MTBF \textgreater{} baseToArchNetMTBF
 (180{[}day{]})
 
 \textbf{Precondition:} \\
-Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-loaded with simulated or pre-cursor data.\\
-Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.\\
-At least 6 months of historical monitoring data on this link is
-available.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+  loaded with simulated or pre-cursor data, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  Archiver/Forwarder receivers or other capability is on configured at
+  LDF, connected to Base - Archive Network, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  At least 6 months of historical monitoring data on this link is
+  available.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. Final verification will be tested at full operational volume.
+After the initial test, the corresponding verification elements will be
+flagged as ``Requires Monitoring'' such that those requirements will be
+closed out as having been verified but will continue to be monitored
+throughout commissioning to ensure they do not drop out of compliance.
 
 \textbf{Predecessors:} \\
 ~PMCS DMTC-7400-2130 Complete
 
 \textbf{Test Personnel:} \\
-
+Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
+(NCSA)
 
 \textbf{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
@@ -1526,7 +1643,7 @@ Extrapolated network availability meets baseToArchNetMTBF =
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-83}{LVV-83} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T195 \\
 \end{tabular}
@@ -1576,19 +1693,37 @@ network can recover from outages within baseToArchNetMTTR =
 48{[}hour{]}.
 
 \textbf{Precondition:} \\
-Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-loaded with simulated or pre-cursor data.\\
-Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.\\
-At least 6 months of monitoring data for this link is available.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+  loaded with simulated or pre-cursor data, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  Archiver/Forwarder receivers or other capability is on configured at
+  LDF, connected to Base - Archive Network, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  At least 6 months of monitoring data for this link is available.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. Final verification will be tested at full operational volume.
+After the initial test, the corresponding verification elements will be
+flagged as ``Requires Monitoring'' such that those requirements will be
+closed out as having been verified but will continue to be monitored
+throughout commissioning to ensure they do not drop out of
+compliance.\\[2\baselineskip]
 
 \textbf{Predecessors:} \\
 PMCS DM-NET-5 Complete
 
 \textbf{Test Personnel:} \\
-Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
-(FIU/AmLight), Matt Kollross (NCSA)
+Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
+(NCSA)
 
 \textbf{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
@@ -1693,7 +1828,7 @@ exceeding rates specified in LDM-142.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-84}{LVV-84} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T196 \\
 \end{tabular}
@@ -1746,11 +1881,28 @@ subsequent recovery primary. Demonstrate the use of the secondary path
 in ``catch-up'' mode.
 
 \textbf{Precondition:} \\
-Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-loaded with simulated or pre-cursor data.\\
-Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+  loaded with simulated or pre-cursor data, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  Archiver/Forwarder receivers or other capability is on configured at
+  LDF, connected to Base - Archive Network, running on end node
+  computers that are the production hardware or equivalent to it.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. Final verification will be tested at full operational volume.
+After the initial test, the corresponding verification elements will be
+flagged as ``Requires Monitoring'' such that those requirements will be
+closed out as having been verified but will continue to be monitored
+throughout commissioning to ensure they do not drop out of
+compliance.\\[2\baselineskip]
 
 \textbf{Predecessors:} \\
 PMCS DM-NET-5 Complete\\
@@ -1760,8 +1912,8 @@ PMCS DMTC-8100-2530 Complete\\
 PMCS DMTC-8200-0600 Complete
 
 \textbf{Test Personnel:} \\
-Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
-(FIU/AmLight), Matt Kollross (NCSA)
+Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
+(NCSA)
 
 \textbf{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
@@ -1898,7 +2050,7 @@ primary path.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-88}{LVV-88} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T200 \\
 \end{tabular}
@@ -1953,11 +2105,27 @@ rates specified in \citeds{LDM-142}, i.e at archToDacBandwidth = 10000{[}megabit
 per second{]}.
 
 \textbf{Precondition:} \\
-Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.\\
-At least 6 months of historical monitoring data is available on these
-network links.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Data is staged in LDF and data transfer capabilities to US DAC and
+  Chilean DAC are in place, running on end node computers that are the
+  production hardware or equivalent to it.
+\item
+  At least 6 months of historical monitoring data is available on these
+  network links.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. Final verification will be tested at full operational volume.
+After the initial test, the corresponding verification elements will be
+flagged as ``Requires Monitoring'' such that those requirements will be
+closed out as having been verified but will continue to be monitored
+throughout commissioning to ensure they do not drop out of
+compliance.\\[2\baselineskip]
 
 \textbf{Predecessors:} \\
 PMCS DMTC-8100-2550 Complete
@@ -2026,7 +2194,7 @@ per second{]}, i.e. at or exceeding rates specified in LDM-142.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-89}{LVV-89} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T201 \\
 \end{tabular}
@@ -2078,11 +2246,28 @@ Verify availability of archiving to Data Access Center Network using
 test and historical data of or exceeding archToDacNetMTBF= 180{[}day{]}.
 
 \textbf{Precondition:} \\
-Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.\\
-At least 6 months of historical monitoring data is available on these
-network links.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Data is staged in LDF and data transfer capabilities to US DAC and
+  Chilean DAC are in place, ~running on end node computers that are the
+  production hardware or equivalent to it.
+\item
+  At least 6 months of historical monitoring data is available on these
+  network links, ~running on end node computers that are the production
+  hardware or equivalent to it.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. Final verification will be tested at full operational volume.
+After the initial test, the corresponding verification elements will be
+flagged as ``Requires Monitoring'' such that those requirements will be
+closed out as having been verified but will continue to be monitored
+throughout commissioning to ensure they do not drop out of
+compliance.\\[2\baselineskip]
 
 \textbf{Predecessors:} \\
 PMCS DMTC-8100-2550 Complete
@@ -2151,7 +2336,7 @@ specified in LDM-142.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-90}{LVV-90} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T202 \\
 \end{tabular}
@@ -2203,9 +2388,24 @@ subsequent recovery to primary within or exceeding chToDacNetMTTR =
 48{[}hour{]}.
 
 \textbf{Precondition:} \\
-Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Data is staged in LDF and data transfer capabilities to US DAC and
+  Chilean DAC are in place, running on end node computers that are the
+  production hardware or equivalent to it.
+\item
+  As-built documentation for all of the above is available.
+\item
+  NOTE: This test will be repeated at increasing data volumes as
+  additional observatory capabilities (e.g. ComCAM, FullCam) become
+  available. ~Final verification will be tested at full operational
+  volume. ~After the initial test, the corresponding verification
+  elements will be flagged as ``Requires Monitoring'' such that those
+  requirements will be closed out as having been verified but will
+  continue to be monitored throughout commissioning to ensure they do
+  not drop out of compliance.
+\end{enumerate}
 
 \textbf{Predecessors:} \\
 PMCS DMTC-8100-2550 Complete
@@ -2295,7 +2495,7 @@ entire process meets chToDacNetMTTR = 48{[}hour{]}.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-91}{LVV-91} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 1b &
 \begin{tabular}{c}
 LVV-T203 \\
 \end{tabular}
@@ -2346,9 +2546,24 @@ simulating a failure on the primary path and capacity on the secondary
 path.
 
 \textbf{Precondition:} \\
-Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Data is staged in LDF and data transfer capabilities to US DAC and
+  Chilean DAC are in place, running on end node computers that are the
+  production hardware or equivalent to it.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
+
+NOTE: This test will be repeated at increasing data volumes as
+additional observatory capabilities (e.g. ComCAM, FullCam) become
+available. Final verification will be tested at full operational volume.
+After the initial test, the corresponding verification elements will be
+flagged as ``Requires Monitoring'' such that those requirements will be
+closed out as having been verified but will continue to be monitored
+throughout commissioning to ensure they do not drop out of
+compliance.\\[2\baselineskip]
 
 \textbf{Predecessors:} \\
 PMCS DMTC-8100-2550 Complete
@@ -2467,7 +2682,7 @@ Network recovers to primary in \textless{}= 60s.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-183}{LVV-183} &
-Robert Gruendl & Not Covered & 1a &
+Robert Gruendl & Covered & 2 &
 \begin{tabular}{c}
 LVV-T192 \\
 \end{tabular}
@@ -2516,9 +2731,14 @@ Verify as-built wireless network at the Base Facility supports
 minBaseWiFi bandwidth (1000 Mbs).
 
 \textbf{Precondition:} \\
-Base Wireless LAN is installed/configured and Test Personnel have
-accounts for email, internet access.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Base Wireless LAN is installed/configured and Test Personnel have
+  accounts for email, internet access.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
 
 \textbf{Predecessors:} \\
 PMCS DLP-465 Complete.
@@ -2565,7 +2785,7 @@ minBaseWiFI bandwidth.
 \hline
 \textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-18491}{LVV-18491} &
-Robert Gruendl & Not Covered & 2 &
+Robert Gruendl & Covered & 2 &
 \begin{tabular}{c}
 LVV-T181 \\
 \end{tabular}
@@ -2618,11 +2838,16 @@ frequent drop-outs, no frequent jaggies on video, etc.) on both voice
 calls and videoconferening.
 
 \textbf{Precondition:} \\
-Base VOIP is installed/configured and Test Personnel have phone sets.
-~Base Videoconference system is installed/configured. ~Summit,
-Headquarters, and/or LDF Videconference system is
-installed/configured.\\
-As-built documentation for all of the above is available.
+\begin{enumerate}
+\tightlist
+\item
+  Base VOIP is installed/configured and Test Personnel have phone sets.
+  ~Base Videoconference system is installed/configured. ~Summit,
+  Headquarters, and/or LDF Videconference system is
+  installed/configured.
+\item
+  As-built documentation for all of the above is available.
+\end{enumerate}
 
 \textbf{Predecessors:} \\
 PMCS DLP-465 Complete\\
@@ -2680,5 +2905,224 @@ frequent audio glitches, no frequent jaggies on video, etc.).
 \\ %\hdashline
         \midrule
     \end{longtable}
+\subsection{[LVV-18948] DMS-REQ-0346-V-02: Data Availability - Network }\label{lvv-18948}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18948}{LVV-18948} &
+Jeff Kantor & Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0346 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} All raw data used to generate any public data
+product (raw exposures, calibration frames, telemetry, configuration
+metadata, etc.) shall be kept and made available for download. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0004 & The Archive Facility \\
+OSS-REQ-0167 & Data Archiving \\
+OSS-REQ-0313 & Telemetry Database Retention \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+\subsection{[LVV-18949] DMS-REQ-0009-V-02: Simulated Data - Network }\label{lvv-18949}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18949}{LVV-18949} &
+Jeff Kantor & Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0009 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide the ability to inject
+artificial or simulated data into data products to assess the functional
+and temporal performance of the production processing software. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0353 & Difference Source Spuriousness Threshold - Transients \\
+DMS-REQ-0007 & Pipeline Infrastructure \\
+OSS-REQ-0351 & Difference Source Spurious Probability Metric \\
+OSS-REQ-0354 & Difference Source Spuriousness Threshold - MOPS \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+\subsection{[LVV-18950] DMS-REQ-0309-V-02: Raw Data Archiving Reliability - Network }\label{lvv-18950}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18950}{LVV-18950} &
+Jeff Kantor & Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0309 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS system shall archive all data, including
+science, wavefront, and guider images and associated metadata, that are
+presented for archiving by up-stream systems, with a rate of permanent
+data loss or corruption not to exceed \textbf{dataLossMax}. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{dataLossMax = 1.0e-5{{[}float{]}}} Maximum fraction of raw
+images that are permitted to be permanently lost or corrupted, including
+the loss or corruption of essential associated metadata, once acquired
+by the DMS. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} Data ``presented for archiving'' means data that
+have been successfully transferred from upstream systems to DMS, and
+that are intended for permanent archiving. Data obtained for diagnostic
+and other limited-use engineering purposes are specifically excluded
+from this requirement. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0111 & Science Image Archiving Reliability \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+\subsection{[LVV-18951] DMS-REQ-0167-V-02: Incorporate Autonomics - Network }\label{lvv-18951}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18951}{LVV-18951} &
+Jeff Kantor & Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0167 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will incorporate sufficient
+capability for self-diagnostics and recovery to provide for continuation
+of processing in the event of partial hardware or software failures. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} It is understood that the system performance may
+degrade with increasing numbers of failures. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0166 & Incorporate Fault-Tolerance \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+\subsection{[LVV-18952] DMS-REQ-0166-V-02: Incorporate Fault-Tolerance - Network }\label{lvv-18952}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18952}{LVV-18952} &
+Jeff Kantor & Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0166 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will incorporate as
+fault-tolerance features to prevent loss of data in the event of
+hardware or software failure. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+\subsection{[LVV-18953] DMS-REQ-0165-V-02: Infrastructure Sizing for ``catching up'' - Network }\label{lvv-18953}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18953}{LVV-18953} &
+Jeff Kantor & Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0165 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will be sized such that after
+outages, ``catch up'' processing of the temporarily stored raw image
+data may occur at the rate of one night's observing data processed per
+day, without interrupting the current day's observatory operations. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0052 & Summit Data Buffer \\
+OSS-REQ-0051 & Summit-Base Connectivity Loss \\
+DMS-REQ-0162 & Pipeline Throughput \\
+OSS-REQ-0050 & Summit Power Grid Loss \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
 
 
