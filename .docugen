@@ -1,0 +1,3 @@
+#!/bin/bash
+docsteady --version
+docsteady baseline-ve DM Network jira_docugen.tex --details true
