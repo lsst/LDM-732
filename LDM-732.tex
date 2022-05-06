@@ -1,155 +1,478 @@
-\documentclass[DM,lsstdraft,STS,toc]{lsstdoc}
+% generated from JIRA project LVV
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/tpr.latex.jinja2.
+% using docsteady version 2.2.4
+% Please do not edit -- update information in Jira instead
+\documentclass[DM,lsstdraft,STR,toc]{lsstdoc}
+\usepackage{geometry}
+\usepackage{longtable,booktabs}
 \usepackage{enumitem}
-\usepackage{booktabs}
 \usepackage{arydshln}
-\usepackage{afterpage}
-\usepackage{pdflscape}
-\usepackage{graphicx}
-\usepackage{lipsum}
+\usepackage{attachfile}
+\usepackage{array}
+\usepackage{dashrule}
 
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
-\input{meta.tex}
+\input meta.tex
 
-%\input{aglossary.tex}
-%\makeglossaries
+\newcommand{\attachmentsUrl}{https://github.com/\gitorg/\lsstDocType-\lsstDocNum/blob/\gitref/attachments}
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-\DeclareRobustCommand{\cmdkey}{\raisebox{-.035em}{\includegraphics[height=.75em]{figures/cmdkey}}}
-
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{4}
 
 \begin{document}
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\def\product{LSST Data Management}
+\def\milestoneName{Summit - Base Network Integration}
+\def\milestoneId{}
+\def\product{Networks}
 
 \setDocCompact{true}
 
-\title[Network Verification Document]{Vera C. Rubin Observatory Network Verification Document}
-
-\author{Jeff Kantor}
+\title{LVV-P47: Summit - Base Network Integration Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\setDocDate{\vcsdate}
+\date{ 2022-05-06 }
+\author{ Jeff Kantor }
 
-\setDocAbstract {
-The Vera C Rubin Observatory Network Verification Document (VNVD) and associated JIRA V\&V
-Project define the flow-down of specifications from higher level documents to the LSST
-Observatory Network (as defined in LSE-78 LSST Observatory Network), and the methods and
-resources that will be used to verify that the networks have met the specifications satisfactory
-for accepting the Summit Network into DM Subsystem Integration Test (DMSSIT) and LSST
-System Integration Test (SIT)
+\input{history_and_info.tex}
+
+
+\setDocAbstract{
+This is the test plan and report for
+\textbf{ Summit - Base Network Integration},
+an LSST milestone pertaining to the Data Management Subsystem.\\
+This document is based on content automatically extracted from the Jira test database on \docDate.
+The most recent change to the document repository was on \vcsDate.
 }
 
-% Most recent last
-\setDocChangeRecord{%
-	\addtohist{1.0}{2020-05-15}{Document approved (\jira{RFC-674})}{J.~Kantor}
-	\addtohist{}{2020-02-21}{Document ready for CCB approval}{J.~Kantor}
-	\addtohist{}{2020-01-28}{First draft}{J.~Kantor}
-}
-
-\setDocUpstreamLocation{\url{https://github.com/lsst/ldm-732}}
-\setDocUpstreamVersion{\vcsrevision}
 
 \maketitle
 
+\section{Introduction}
+\label{sect:intro}
 
-\section{Introduction}\label{sec:intro}
+
+\subsection{Objectives}
+\label{sect:objectives}
+
+ This test plan documents the Summit - Base Network Integration test
+activity.
 
 
-\subsection{Scope}\label{sec:scope}
 
-This plan governs only tests of the network infrastructure, not the applications and services that
-use the network. To be specific, this plan governs tests of the network only up to ISO OSI Layer
-\url{https://en.wikipedia.org/wiki/OSI_model}.
+\subsection{System Overview}
+\label{sect:systemoverview}
 
-As such, all of the tests governed by this plan and defined in the 
-\href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation JIRA Project (LVV)} 
-are defined as Lower Level (LL) in the System Engineering test hierarchy. LL
-corresponds to Data Management Subsystem Integration. Where appropriate, additional
-comments regarding Same Level (SL) which corresponds to LSST System Integration, and Higher
-Level (HL) which corresponds to LSST Commissioning, are called out in the Verification
-Elements.
+ The Summit - Base Network is defined in \citeds{LSE-78} and \citeds{LSE-309}
 
-Note that significant testing of the networks occurs prior to subsystem and system integration,
-i.e. prior to verification, as documented in document-14789 LSST LHN End-to-End Plan and
-associated test documentation 
-(see \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-3758}{Collection-3758}).
 
-Finally, note that one significant network, the Summit Network, is not a DM deliverable and as
-such is not contained within this plan. As Telescope and Site deliverable, the Summit Network
-is covered by the Telescope and Site V\&V plans.
+\subsection{Document Overview}
+\label{sect:docoverview}
 
-\subsection{Specification Flow-down}\label{sec:sepcflowd}
+This document was generated from Jira, obtaining the relevant information from the
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P47}{LVV-P47}
+~Jira Test Plan and related Test Cycles (
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C82}{LVV-C82}
+).
 
-\subsubsection{Data Management Subsystem Requirements Flow-down}\label{sec:dmreqflowd}
+Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}),
+the applicable documentation, and explains how this document is organized.
+Section \ref{sect:testplan} provides additional information about the test plan, like for example the configuration
+used for this test or related documentation.
+Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
 
-The Data Management Subsystem Requirements (LSE-61, aka DMSR) drive the LSST Observatory Network Design 
-for all segments except the Summit Network (see above).  The DMSR sections that directly drive the 
-VNVD are listed here for convenience. These DMSR sections contain traceable network requirements as 
-documented in the LSST V\&V JIRA Project (LVV) Verification Elements:
+Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary},
+an overall assessment statement and suggestions for possible improvements.
+Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
+
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P47}{LVV-P47} in Jira is \textbf{ Completed }.
+
+\subsection{References}
+\label{sect:references}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads,local}
+
+
+\newpage
+\section{Test Plan Details}
+\label{sect:testplan}
+
+
+\subsection{Data Collection}
+
+  Observing is not required for this test campaign.
+
+\subsection{Verification Environment}
+\label{sect:hwconf}
+  Summit - Base Network integration is verified in the actual Cerro Pachon
+summit and La Serena Base, as well as on the fiber route between them.
+~The integration is done in 3 phases ~(in collaboration with
+equipment/installation vendors):
+
+\begin{enumerate}
+\tightlist
+\item
+  Installation of fiber optic cables and Optical Time Domain Reflector
+  (OTDR) fiber testing (completed 20170602
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
+  deliverable RD10})
+\item
+  Installation of AURA DWDM and Data Transfer Node (DTN) (completed
+  20171218 \citeds{DMTR-82})
+\item
+  Installation of LSST DWDM and Bit Error Rate Tester (BERT) data
+  (completed 20190505
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743})
+\end{enumerate}
+
+  \subsection{Entry Criteria}
+  By phase:
+
+\begin{enumerate}
+\tightlist
+\item
+  Posts from Cerro Pachon to AURA Gatehouse repaired/improved. ~Fiber
+  installed on posts from Cerro Pachon to AURA Gatehouse. ~Fiber
+  installed from AURA Gatehouse to AURA compound in La Serena. OTDR
+  purchased.
+\item
+  AURA DWDM installed in caseta on Cerro Pachon and in existing computer
+  room in La Serena. ~DTN installed in La Serena. ~DTN loaded with
+  software and test data staged.
+\item
+  Base Data Center (BDC) ready for installation of LSST DWDM. ~Fiber
+  connecting existing computer room to BDC. ~LSST DWDM equipment
+  installed in Summit Computer Room and BDC.
+\end{enumerate}
+
+  \subsection{Exit Criteria}
+  By phase:
+
+\begin{enumerate}
+\tightlist
+\item
+  Fiber tested to within acceptable Db.
+\item
+  Summit - Base bandwidth and latency within specifications
+\item
+  Summit - Base bandwidth, latency, bit error rate within specifications
+\end{enumerate}
+
+
+\subsection{Related Documentation}
+
+Docushare collection where additional relevant documentation can be found:
 
 \begin{itemize}
-\item 1.2.1 Nightly Data Accessible Within 24 hrs
-\item 2.6.3 Transient Alert Distribution
-\item 2.6.8 Solar System Objects Available within 24 hours
-\item 2.8.1 Timely Publication of Level 2 Data Releases
-\item 4.4 Summit to Base
-\item 4.6 Base to Archive
-\item 4.8 Archive to Data Access Center
+\item By phase:\\
+
+\begin{enumerate}
+\tightlist
+\item
+  Installed fiber optic cables and purchased Optical Time Domain
+  Reflector (OTDR) fiber testing (completed 20170602
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
+  deliverable RD10})
+\item
+  Installed AURA DWDM and Data Transfer Node (DTN) (completed 20171218
+  \citeds{DMTR-82})
+\item
+  Installed LSST DWDM (completed 20190505
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743})
+\end{enumerate}
 \end{itemize}
 
-\subsubsection{Observatory System Specifications Flow-down}\label{sec:ossflowd}
 
-Note that the Observatory System Specifications (LSE-30, aka OSS) also include general requirements 
-on security, disaster recovery, physical environment (including seismic activity), and shipping 
-which are flowed down to the subsystems, and while they apply to all subsystems, including the networks, 
-they will be tested and verified in the Telescope and Data Management Subsystem Integration Tests and in 
-the LSST Commissioning Phase, as part of the LSST System Integration Test.  Those requirements are excluded 
-from this specification and the associated verification matrix, as they will be addressed in the applicable plans.
+\subsection{PMCS Activity}
 
-\subsection{LSST Verification and Validation JIRA Project (LVV)}\label{sec:lvv}
+Primavera milestones related to the test campaign:
+By phase:
 
-The LSST Verification and Validation JIRA Project lists the specifications within or derived from, 
-and traceable to, the DMSR specifications, in Verification Elements that also specify the methods 
-to be used to verify, the responsible parties, and additional notes regarding verification, per the 
-\citeds{LSE-160} LSST Verification and Validation Process. The Verification Elements then have one or more 
-Test Cases associated with them that describe the implementation of the verification activities in terms 
-of specific tests to be executed.  Those Test Cases are then scheduled via Test Plans and Campaigns, 
-and executed with results reported in Test Cycles/
-
-\subsection{Verification and Validation Schedule and Resources}\label{sec:schedule}
-
-The schedule and resources required for network verification are defined in the LSST 
-Project Management Control System (PMCS).  They are covered by the final integration test activities in 
-the WBS elements 02C.08.03 Long-Haul Networks.  In each Verification Element, a cross-reference to the 
-ID of the appropriate predecessor PMCS activities is provided in the pre-conditions field.
+\begin{enumerate}
+\tightlist
+\item
+  DMTC-8000-0806
+\item
+  DMTC-8000-0826
+\item
+  DMTC-8000-0836
+\end{enumerate}
 
 
-\subsection{Applicable Documents}
-\label{sec:docs}
+\newpage
+\section{Personnel}
+\label{sect:personnel}
 
-\begin{tabular}[htb]{l l}
-\citeds{LSE-61}  & LSST DM Subsystem Requirements \\
-\citeds{LSE-78}  & LSST Observatory Network Design \\
-\citeds{LSE-160} & Verification and Validation Process \\
+The personnel involved in the test campaign is shown in the following table.
+
+{\small
+\begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
+\hline
+\multicolumn{2}{r}{T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P47}{LVV-P47} owner:} &
+\multicolumn{2}{l}{\textbf{ Jeff Kantor } }\\\hline
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C82}{LVV-C82} owner:} &
+\multicolumn{2}{l}{\textbf{
+Jeff Kantor }
+} \\\hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1168}{LVV-T1168}
+& {\small Jeff Kantor } & {\small Jeff Kantor } &
+\begin{minipage}[]{6cm}
+\smallskip
+{\small Ron Lambert (LSST), Albert Astudillo (REUNA), Mauricio Rojas
+(CTIO/CISS), Raylex, Coriant, Telefonica contractors }
+\medskip
+\end{minipage}
+\\ \hline
+\end{longtable}
+}
+
+\newpage
+
+\section{Test Campaign Overview}
+\label{sect:overview}
+
+\subsection{Summary}
+\label{sect:summarytable}
+
+{\small
+\begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
+\toprule
+\multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P47}{LVV-P47}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Summit - Base Network Integration }} & Completed \\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C82}{LVV-C82}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Summit - Base Network Integration }} & Done \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1168}{LVV-T1168}
+&  1
+& Pass &
+\begin{minipage}[]{9cm}
+\smallskip
+Tests conducted in 3 phases, each phase passed. ~Phase 2 was limited by
+Data Transfer Node capacity to put data onto the network; still passed
+but could not keep increasing data rate to find top limit.
+\medskip
+\end{minipage}
+&   \\\hline
+\caption{Test Campaign Summary}
+\label{table:summary}
+\end{longtable}
+}
+
+\subsection{Overall Assessment}
+\label{sect:overallassessment}
+
+Passed
+
+\subsection{Recommended Improvements}
+\label{sect:recommendations}
+
+None
+
+\newpage
+\section{Detailed Test Results}
+\label{sect:detailedtestresults}
+
+\subsection{Test Cycle LVV-C82 }
+
+Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C82}{Summit - Base Network Integration}} in Jira.
+
+Test Cycle name: Summit - Base Network Integration\\
+Status: Done
+
+This test cycle covers the Summit - Base Network Integration test
+activity.
+
+\subsubsection{Software Version/Baseline}
+By phase:\\
+
+\begin{enumerate}
+\tightlist
+\item
+  Optical Time Domain Reflector (OTDR) firmware/configuration/plots/logs
+  documented in
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
+  deliverable RD10}
+\item
+  Data Transfer Node (DTN) software/configuration/data documented in
+  \citeds{DMTR-82}
+\item
+  Bit Error Rate Tester (BERT) firmware/configuration/plots/logs
+  documented in
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743}
+\end{enumerate}
+
+\subsubsection{Configuration}
+By phase:\\
+
+\begin{enumerate}
+\tightlist
+\item
+  Optical Time Domain Reflector (OTDR) firmware/configuration/plots/logs
+  documented in
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
+  deliverable RD10}
+\item
+  Data Transfer Node (DTN) software/configuration/data documented in
+  \citeds{DMTR-82}
+\item
+  Bit Error Rate Tester (BERT) firmware/configuration/plots/logs
+  documented in
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743}
+\end{enumerate}
+
+\subsubsection{Test Cases in LVV-C82 Test Cycle}
+
+\paragraph{ LVV-T1168 - Verify Summit - Base Network Integration }\mbox{}\\
+
+Version \textbf{1}.
+Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1168}{\textit{ LVV-T1168 } }
+test case in Jira.
+
+Verify the integration of the summit to base network by demonstrating a
+sustained and uninterrupted transfer of data between summit and base
+over 1 day period at or exceeding rates specified in \citeds{LDM-142}. Done in 3
+phases in collaboration with equipment/installation vendors (see test
+procedure).
+
+\textbf{ Preconditions}:\\
+PMCS DMTC-7400-2330 COMPLETE\\
+By phase:
+
+\begin{enumerate}
+\tightlist
+\item
+  Posts from Cerro Pachon to AURA Gatehouse repaired/improved. ~Fiber
+  installed on posts from Cerro Pachon to AURA Gatehouse. ~Fiber
+  installed from AURA Gatehouse to AURA compound in La Serena. OTDR
+  purchased.
+\item
+  AURA DWDM installed in caseta on Cerro Pachon and in existing computer
+  room in La Serena. ~DTN installed in La Serena. ~DTN loaded with
+  software and test data staged.
+\item
+  Base Data Center (BDC) ready for installation of LSST DWDM. ~Fiber
+  connecting existing computer room to BDC. ~LSST DWDM equipment
+  installed in Summit Computer Room and BDC.
+\end{enumerate}
+
+Execution status: {\bf Pass }
+
+Final comment:\\Tests conducted in 3 phases, each phase passed. ~Phase 2 was limited by
+Data Transfer Node capacity to put data onto the network; still passed
+but could not keep increasing data rate to find top limit.
+
+
+Detailed steps results:
+
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 1 & Step Execution Status: \textbf{ Pass } \\ \hline
 \end{tabular}
+ Description \\
+{\footnotesize
+Test optical fiber with OTDR
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Test Data \\
+ {\footnotesize
+OTDR generated optical data
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Fiber tested to within acceptable Db.
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+\begin{itemize}
+\tightlist
+\item
+  Type of fiber: G.652 PKP-250
+\item
+  Fiber attenuation: \textless{} 0,25 dB/Km at 1550nm
+\item
+  Length: 60Kms (approximately) Number of filaments: 4
+\end{itemize}
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 2 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Test AURA DWDM
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Test Data \\
+ {\footnotesize
+DTN perfSonar generated data
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Summit - Base bandwidth and latency within specifications
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+The goal was to achieve a minimum of 40 Gbps end to end, up to a maximum
+60 Gbps, with the test configuration that we had put in place. Iperf3
+was utilized to generate the sustained data rates. Initial teething
+problems were encountered which required some days to troubleshoot and
+understand, but\\
+then the team was ready to perform the test.
+
+The limiting factor in obtaining an optimum capacity of 60 Gbps was
+discovered to be due to the NICs in the DTN machines. The processors
+were not capable of maintaining a constant 10 Gbps stream and in fact
+the best we could obtain was approximately 44 Gbps (6x7.5 Gbps) end to
+end, sustained over a 24-hour period. However, that more than satisfied
+our expectations given the preliminary nature of the testing and the
+minimum cost spent to optimize the DTN configurations.
+
+}
+\begin{tabular}{p{2cm}p{14cm}}
+\toprule
+Step 3 & Step Execution Status: \textbf{ Pass } \\ \hline
+\end{tabular}
+ Description \\
+{\footnotesize
+Test LSST DWDM
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Test Data \\
+ {\footnotesize
+BERT generated data
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Expected Result \\
+{\footnotesize
+Summit - Base bandwidth, latency, bit error rate within specifications
+
+}
+\hdashrule[0.5ex]{\textwidth}{1pt}{3mm}
+  Actual Result \\
+{\footnotesize
+Summit - Base bandwidth, latency, bit error rate within specifications,
+refer to
+\href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-32765/Mediciones\%20OSA\%20Anillo\%20AURA\%20-\%20LSST.pptx}{Mediciones
+OSA Anillo AURA - LSST.pptx} in
+docushare~\href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743}
+
+}
 
 
-\newpage
-\input{jira_docugen}
 
-\newpage
-\section{References\label{sect:references}}
-\renewcommand{\refname}{}
-\bibliography{lsst,refs,books,refs_ads,local.bib}
-
-\newpage
-\section{Acronyms \label{sect:acronyms}} % include acronyms.tex generated by the generateAcronyms.py (in texmf/scripts)
-\input{acronyms}
-
-%\section{Glossary \label{sect:glossary}}
-%\renewcommand{\refname}{}
-%\printglossaries
-
+\input{appendix.tex}
 \end{document}
