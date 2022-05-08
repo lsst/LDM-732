@@ -25,7 +25,7 @@ $(JOBNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
 
 .FORCE:
 
-jira_docugen.tex: 
+generate: .FORCE
 	docsteady --namespace DM baseline-ve DM Network jira_docugen.tex
 #Github action docgec_from_jira is probalby a better option - you have to instgall docstready and do the  the auth for this other wise.. see docsteady.lsst.io
 
@@ -39,8 +39,6 @@ meta.tex: Makefile .FORCE
 	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
 
 
-generate: .FORCE
-	docsteady --namespace $(NAMESPACE) generate-tpr $(PLAN) $(DOCNAME).tex
 
 
 #Traditional acronyms are better in this document
