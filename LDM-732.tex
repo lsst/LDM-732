@@ -28,9 +28,9 @@
 
 \title[Network Verification Document]{Vera C. Rubin Observatory Network Verification Document}
 
-\author{Jeff Kantor}
+\author{Joshua Hoblitt, Jeff Kantor}
 \setDocRef{\lsstDocType-\lsstDocNum}
-\setDocDate{\vcsdate}
+\setDocDate{\today}
 
 \setDocAbstract {
 The Vera C Rubin Observatory Network Verification Document (VNVD) and associated JIRA V\&V
@@ -45,11 +45,12 @@ System Integration Test (SIT)
 \setDocChangeRecord{%
 	\addtohist{1.0}{2020-05-15}{Document approved (\jira{RFC-674})}{J.~Kantor}
 	\addtohist{}{2020-02-21}{Document ready for CCB approval}{J.~Kantor}
-	\addtohist{}{2020-01-28}{First draft}{J.~Kantor}
+	\addtohist{1.0}{2020-05-15}{Document approved (\jira{RFC-674})}{J.~Kantor}
+	\addtohist{1.N}{2020-MM-DD}{Document refresh }{J.~Hoblitt}
 }
 
 \setDocUpstreamLocation{\url{https://github.com/lsst/ldm-732}}
-\setDocUpstreamVersion{\vcsrevision}
+\setDocUpstreamVersion{\vcsRevision}
 
 \maketitle
 
@@ -63,8 +64,8 @@ This plan governs only tests of the network infrastructure, not the applications
 use the network. To be specific, this plan governs tests of the network only up to ISO OSI Layer
 \url{https://en.wikipedia.org/wiki/OSI_model}.
 
-As such, all of the tests governed by this plan and defined in the 
-\href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation JIRA Project (LVV)} 
+As such, all of the tests governed by this plan and defined in the
+\href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation JIRA Project (LVV)}
 are defined as Lower Level (LL) in the System Engineering test hierarchy. LL
 corresponds to Data Management Subsystem Integration. Where appropriate, additional
 comments regarding Same Level (SL) which corresponds to LSST System Integration, and Higher
@@ -73,7 +74,7 @@ Elements.
 
 Note that significant testing of the networks occurs prior to subsystem and system integration,
 i.e. prior to verification, as documented in document-14789 LSST LHN End-to-End Plan and
-associated test documentation 
+associated test documentation
 (see \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-3758}{Collection-3758}).
 
 Finally, note that one significant network, the Summit Network, is not a DM deliverable and as
@@ -84,9 +85,9 @@ is covered by the Telescope and Site V\&V plans.
 
 \subsubsection{Data Management Subsystem Requirements Flow-down}\label{sec:dmreqflowd}
 
-The Data Management Subsystem Requirements (LSE-61, aka DMSR) drive the LSST Observatory Network Design 
-for all segments except the Summit Network (see above).  The DMSR sections that directly drive the 
-VNVD are listed here for convenience. These DMSR sections contain traceable network requirements as 
+The Data Management Subsystem Requirements (LSE-61, aka DMSR) drive the LSST Observatory Network Design
+for all segments except the Summit Network (see above).  The DMSR sections that directly drive the
+VNVD are listed here for convenience. These DMSR sections contain traceable network requirements as
 documented in the LSST V\&V JIRA Project (LVV) Verification Elements:
 
 \begin{itemize}
@@ -101,28 +102,28 @@ documented in the LSST V\&V JIRA Project (LVV) Verification Elements:
 
 \subsubsection{Observatory System Specifications Flow-down}\label{sec:ossflowd}
 
-Note that the Observatory System Specifications (LSE-30, aka OSS) also include general requirements 
-on security, disaster recovery, physical environment (including seismic activity), and shipping 
-which are flowed down to the subsystems, and while they apply to all subsystems, including the networks, 
-they will be tested and verified in the Telescope and Data Management Subsystem Integration Tests and in 
-the LSST Commissioning Phase, as part of the LSST System Integration Test.  Those requirements are excluded 
+Note that the Observatory System Specifications (LSE-30, aka OSS) also include general requirements
+on security, disaster recovery, physical environment (including seismic activity), and shipping
+which are flowed down to the subsystems, and while they apply to all subsystems, including the networks,
+they will be tested and verified in the Telescope and Data Management Subsystem Integration Tests and in
+the LSST Commissioning Phase, as part of the LSST System Integration Test.  Those requirements are excluded
 from this specification and the associated verification matrix, as they will be addressed in the applicable plans.
 
 \subsection{LSST Verification and Validation JIRA Project (LVV)}\label{sec:lvv}
 
-The LSST Verification and Validation JIRA Project lists the specifications within or derived from, 
-and traceable to, the DMSR specifications, in Verification Elements that also specify the methods 
-to be used to verify, the responsible parties, and additional notes regarding verification, per the 
-\citeds{LSE-160} LSST Verification and Validation Process. The Verification Elements then have one or more 
-Test Cases associated with them that describe the implementation of the verification activities in terms 
-of specific tests to be executed.  Those Test Cases are then scheduled via Test Plans and Campaigns, 
+The LSST Verification and Validation JIRA Project lists the specifications within or derived from,
+and traceable to, the DMSR specifications, in Verification Elements that also specify the methods
+to be used to verify, the responsible parties, and additional notes regarding verification, per the
+\citeds{LSE-160} LSST Verification and Validation Process. The Verification Elements then have one or more
+Test Cases associated with them that describe the implementation of the verification activities in terms
+of specific tests to be executed.  Those Test Cases are then scheduled via Test Plans and Campaigns,
 and executed with results reported in Test Cycles/
 
 \subsection{Verification and Validation Schedule and Resources}\label{sec:schedule}
 
-The schedule and resources required for network verification are defined in the LSST 
-Project Management Control System (PMCS).  They are covered by the final integration test activities in 
-the WBS elements 02C.08.03 Long-Haul Networks.  In each Verification Element, a cross-reference to the 
+The schedule and resources required for network verification are defined in the LSST
+Project Management Control System (PMCS).  They are covered by the final integration test activities in
+the WBS elements 02C.08.03 Long-Haul Networks.  In each Verification Element, a cross-reference to the
 ID of the appropriate predecessor PMCS activities is provided in the pre-conditions field.
 
 
