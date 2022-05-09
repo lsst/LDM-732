@@ -26,7 +26,7 @@ $(JOBNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
 .FORCE:
 
 generate: .FORCE
-	docsteady baseline-ve --subcomponent NETWORK 
+	docsteady baseline-ve --subcomponent NETWORK jira_docugen.tex
 
 # conda create and activate docsteady-env first
 #	docsteady --namespace DM baseline-ve DM Network jira_docugen.tex

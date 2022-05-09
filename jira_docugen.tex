@@ -1,20 +1,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% do not edit
+% generated from JIRA project LVV
+% using template at /usr/local/anaconda3/envs/docsteady-old/lib/python3.7/site-packages/docsteady/templates/ve.latex.jinja2.
+% using docsteady version 2.0
+% Please do not edit -- update information in Jira instead
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{ DM Network Verification Elements }
+\section{ DM - NETWORK Verification Elements }
 \label{sec:ves}
 
-The following is the list of verification elements defined in the context of the Network component of the DM subsystem.
+The following is the list of verification elements defined in the context of the NETWORK
+component\footnote{Major product in the subsystem.} of the DM subsystem.
 
-\newpage
+
 \subsection{[LVV-71] DMS-REQ-0168-V-01: Summit Facility Data Communications }\label{lvv-71}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-71}{LVV-71} &
-Gregory Dubois-Felsmann & Covered & 1a &
+Gregory Dubois-Felsmann & Covered &
 \begin{tabular}{c}
 LVV-T1097 \\
 LVV-T2338 \\
@@ -45,15 +49,21 @@ archive center (\href{https://jira.lsstcorp.org/browse/LVV-81}{LVV-81},
 \href{https://jira.lsstcorp.org/browse/LVV-83}{LVV-83}).
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0168 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide data communications
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0168 \\ \hline
+Requirement Priority & 1a \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The DMS shall provide data communications
 infrastructure to accept science data and associated metadata read-outs,
 and the collection of ancillary and engineering data, for transfer to
-the base facility. \\ \cdashline{1-2}
-Requirement Priority & 1a \\ \cdashline{1-2}
+the base facility.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0002 & The Summit Facility \\
@@ -62,107 +72,51 @@ OSS-REQ-0002 & The Summit Facility \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T1097] Verify Summit Facility Network Implementation }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1097}{LVV-T1097} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1097}{LVV-T1097} & \multicolumn{4}{p{12cm}}{ Verify Summit Facility Network Implementation } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify that data acquired by a AuxTel DAQ can be transferred to Summit
 DWDM and loaded in the EFD without problems.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Summit Control Network and Camera Data Backbone installed and
-  operating properly.
-\item
-  Summit - Base Network installed and operating properly.
-\item
-  EITHER: AuxTel hardware and control systems are functional with
-  LATISS. AuxTel TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected
-  via Control Network on Summit to Rubin Observatory DWDM (with at least
-  2 x 10 Gbps ethernet port client cards) OR: high-quality DAQ
-  application-level simulators that match the form, volume, file paths,
-  compressibility, and cadence of the expected instrument data, running
-  on end node computers that are the production hardware or equivalent
-  to it. Scientific validity of the data content is not essential.
-\item
-  AuxTel Archiver/forwarders installed in Summit and operating properly
-  running on end node computers that are the production hardware or
-  equivalent to it.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, LSSTCam) become
-available. ~Final verification will be tested at full operational
-volume. After the initial test, the corresponding verification elements
-will be flagged as ``Requires Monitoring'' such that those requirements
-will be closed out as having been verified but will continue to be
-monitored throughout commissioning to ensure they do not drop out of
-compliance. ~This will also be monitored for end to end Summit - Data
-Facility transfers during Commissioning.
-
-\textbf{Predecessors:} \\
-PMCS DMTC-7400-2400 Complete\\
-PMCS T\&SC-2600-1545 Complete
-
-\textbf{Test Personnel:} \\
-Ron Lambert (Rubin Observatory), Kian-Tat Lim (Rubin Observatory), Matt
-Kollross (NCSA), Tony Johnson (SLAC), Gregg Thayer (SLAC)
-
-\subsubsection{[LVV-T2338] Replicated telemetry data agrees with telemetry produced at the summit }
-
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2338}{LVV-T2338} &
-Simon Krughoff & Defined & 1 & false & Demonstration
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2338}{LVV-T2338} & \multicolumn{4}{p{12cm}}{ Replicated telemetry data agrees with telemetry produced at the summit } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Simon Krughoff & Defined & 1 & false & Demonstration \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Show that telemetry data can be accessed from the replicated EFD.
-Â~Further, show that the values in the replicated database agree with
-the values in the summit EFD over a specified time range and set of
-topics.\\[2\baselineskip]This test case provides partial coverage of the
-requirement DMS-REQ-0168, Summit Facility Data Communications: "The DMS
-shall provide data communications infrastructure to accept science data
-and associated metadata read-outs, and \textbf{the collection of
-ancillary and engineering data}, for transfer to the base facility.", as
-adapted to the current design for EFD replication (see
+~Further, show that the values in the replicated database agree with the
+values in the summit EFD over a specified time range and set of
+topics.\\
+~\\
+This test case provides partial coverage of the requirement
+DMS-REQ-0168, Summit Facility Data Communications: "The DMS shall
+provide data communications infrastructure to accept science data and
+associated metadata read-outs, and \textbf{the collection of ancillary
+and engineering data}, for transfer to the base facility.", as adapted
+to the current design for EFD replication (see
 \href{https://dmtn-082.lsst.io}{DMTN-082}).
+}
 
-\textbf{Precondition:} \\
-See prerequisites in the Test Plan LVV-P90
-
-\textbf{Predecessors:} \\
-
-
-\textbf{Test Personnel:} \\
-
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-73] DMS-REQ-0171-V-01: Summit to Base Network }\label{lvv-73}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73} &
-Leanne Guy & In Verification & 1a &
+Leanne Guy & In Verification &
 \begin{tabular}{c}
 LVV-T1168 \\
 LVV-T1612 \\
@@ -192,23 +146,29 @@ metrics (both DAQ and Control sides unless noted):
   ISO Layer 3 full (22 x 10 Gbps ethernet ports on DAQ side with test
   data from DAQ test stand, AURA, Camera DAQ team do test). Transfer
   data between summit and base over uninterrupted 1 day period.
-  Â~Demonstrate transfer of data at or exceeding rates specified in
+  ~Demonstrate transfer of data at or exceeding rates specified in
   \citeds{LDM-142}.
 \end{enumerate}
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0171 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide communications
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0171 \\ \hline
+Requirement Priority & 1a \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The DMS shall provide communications
 infrastructure between the Summit Facility and the Base Facility
 sufficient to carry scientific data and associated metadata for each
-image in no more than time \textbf{summToBaseMaxTransferTime}. \\ \cdashline{1-2}
+image in no more than time \textbf{summToBaseMaxTransferTime}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{summToBaseMaxTransferTime = 2{{[}second{]}}} Maximum time
 interval to transfer a full Crosstalk Corrected Exposure and all related
-metadata from the Summit Facility to the Base facility. \\ \cdashline{1-2}
-Requirement Priority & 1a \\ \cdashline{1-2}
+metadata from the Summit Facility to the Base facility. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0003 & The Base Facility \\
@@ -218,117 +178,45 @@ OSS-REQ-0127 & Level 1 Data Product Availability \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T1168] Verify Summit - Base Network Integration }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1168}{LVV-T1168} &
-Jeff Kantor & Approved & 1 & false & Inspection
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1168}{LVV-T1168} & \multicolumn{4}{p{12cm}}{ Verify Summit - Base Network Integration } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Approved & 1 & false & Inspection \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify the integration of the summit to base network by demonstrating a
 sustained and uninterrupted transfer of data between summit and base
 over 1 day period at or exceeding rates specified in \citeds{LDM-142}. Done in 3
 phases in collaboration with equipment/installation vendors (see test
 procedure).
+}
 
-\textbf{Precondition:} \\
-PMCS DMTC-7400-2330 COMPLETE\\
-By phase:
-
-\begin{enumerate}
-\tightlist
-\item
-  Posts from Cerro Pachon to AURA Gatehouse repaired/improved. ~Fiber
-  installed on posts from Cerro Pachon to AURA Gatehouse. ~Fiber
-  installed from AURA Gatehouse to AURA compound in La Serena. OTDR
-  purchased.
-\item
-  AURA DWDM installed in caseta on Cerro Pachon and in existing computer
-  room in La Serena. ~DTN installed in La Serena. ~DTN loaded with
-  software and test data staged.
-\item
-  Base Data Center (BDC) ready for installation of LSST DWDM. ~Fiber
-  connecting existing computer room to BDC. ~LSST DWDM equipment
-  installed in Summit Computer Room and BDC.
-\end{enumerate}
-
-\textbf{Predecessors:} \\
-See pre-conditions by phase above.
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST), Albert Astudillo (REUNA), Mauricio Rojas
-(CTIO/CISS), Raylex, Coriant, Telefonica contractors
-
-\subsubsection{[LVV-T1612] Verify Summit - Base Network Integration (System Level) }
-
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1612}{LVV-T1612} &
-Jeff Kantor & Draft & 1 & false & Inspection
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1612}{LVV-T1612} & \multicolumn{4}{p{12cm}}{ Verify Summit - Base Network Integration (System Level) } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Inspection \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify ISO Layer 3 full (22 x 10 Gbps ethernet ports on DAQ side with
 test data from DAQ test stand, AURA, Camera DAQ team do test).
 Demonstrate transfer of data at or exceeding rates specified in \citeds{LDM-142}.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  PMCS DMTC-7400-2400 COMPLETE
-\item
-  \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/1401}{LVV-T1168}
-  Passed
-\item
-  EITHER: Full Camera DAQ installed on summit and loaded with data OR:
-  high-quality DAQ application-level simulators that match the form,
-  volume, file paths, compressibility, and cadence of the expected
-  instrument data, running on end node computers that are the production
-  hardware or equivalent to it. Scientific validity of the data content
-  is not essential.
-\item
-  Archiver/forwarders installed at Base running on end node computers
-  that are the production hardware or equivalent to it.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, FullCam) become
-available. Final verification will be tested at full operational
-volume.After the initial test, the corresponding verification elements
-will be flagged as ``Requires Monitoring'' such that those requirements
-will be closed out as having been verified but will continue to be
-monitored throughout commissioning to ensure they do not drop out of
-compliance. This will also be monitored for end to end Summit - Data
-Facility transfers during Commissioning.
-
-\textbf{Predecessors:} \\
-See pre-conditions.
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST), Greg Thayer (SLAC)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-74] DMS-REQ-0172-V-01: Summit to Base Network Availability }\label{lvv-74}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-74}{LVV-74} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T185 \\
 \end{tabular}
@@ -345,16 +233,22 @@ Demonstrate transfer of data at or exceeding rates specified in \citeds{LDM-142}
 verify achieved average and peak throughput and latency.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0172 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Summit to Base communications shall be
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0172 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Summit to Base communications shall be
 highly available, with Mean Time Between Failures (MTBF) \textgreater{}
-\textbf{summToBaseNetMTBF}. \\ \cdashline{1-2}
+\textbf{summToBaseNetMTBF}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{summToBaseNetMTBF = 90{{[}day{]}}} Mean time between failures,
-measured over a 1-yr period. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+measured over a 1-yr period. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0373 & Unscheduled Downtime Subsystem Allocations \\
@@ -364,58 +258,30 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T185] Verify implementation of Summit to Base Network Availability }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T185}{LVV-T185} &
-Jeff Kantor & Draft & 1 & false & Inspection
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T185}{LVV-T185} & \multicolumn{4}{p{12cm}}{ Verify implementation of Summit to Base Network Availability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Inspection \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify the availability of Summit to Base Network by demonstrating that
 the mean time between failures is less than summToBaseNetMTBF (90 days)
 over 1 year.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  PMCS DMTC-7400-2400 Complete.
-\item
-  6 months of historical availability data for this link is available.
-\item
-  perSonar installed in Summit and publishing statistics to MadDash.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: After the initial test, the corresponding verification elements
-will be flagged as ``Requires Monitoring'' such that those requirements
-will be closed out as having been verified but will continue to be
-monitored throughout commissioning to ensure they do not drop out of
-compliance. This will also be monitored for end to end Summit - Data
-Facility transfers during Commissioning.
-
-\textbf{Predecessors:} \\
-See pre-conditions.
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-75] DMS-REQ-0173-V-01: Summit to Base Network Reliability }\label{lvv-75}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-75}{LVV-75} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T186 \\
 \end{tabular}
@@ -428,20 +294,26 @@ Disconnect, reconnect and recover transfer of data between summit and
 base. After disconnecting fiber at an intermediate location between
 summit and base, demonstrate reconnection and recovery to transfer of
 data at or exceeding rates specified in \citeds{LDM-142} within MTTR
-specification. Â~Network operator will provide MTTR data on links during
+specification. ~Network operator will provide MTTR data on links during
 commissioning and operations.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0173 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Summit to Base communications shall be
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0173 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Summit to Base communications shall be
 highly reliable, with Mean Time to Repair (MTTR) \textless{}
-\textbf{summToBaseNetMTTR}. \\ \cdashline{1-2}
+\textbf{summToBaseNetMTTR}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{summToBaseNetMTTR = 24{{[}hour{]}}} Mean time to repair,
-measured over a 1-yr period. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+measured over a 1-yr period. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0373 & Unscheduled Downtime Subsystem Allocations \\
@@ -451,56 +323,33 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T186] Verify implementation of Summit to Base Network Reliability }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T186}{LVV-T186} &
-Jeff Kantor & Draft & 1 & false & Demonstration
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T186}{LVV-T186} & \multicolumn{4}{p{12cm}}{ Verify implementation of Summit to Base Network Reliability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Demonstration \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify the reliability of the summit to base network by demonstrating
 reconnection and recovery to transfer of data at or exceeding rates
 specified in \citeds{LDM-142} following a cut in network connection, within MTTR
 specification. The network operator will provide MTTR data on links
-during commissioning and operations.\\[2\baselineskip]
+during commissioning and operations.\\
+~\\
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  PMCS DMTC-7400-2400 Complete
-\item
-  As-built documentation for Summit - Base Network is available.
-\end{enumerate}
-
-NOTE: After the initial test, the corresponding verification elements
-will be flagged as ``Requires Monitoring'' such that those requirements
-will be closed out as having been verified but will continue to be
-monitored throughout commissioning to ensure they do not drop out of
-compliance. This will also be monitored for end to end Summit - Data
-Facility transfers during Commissioning.
-
-\textbf{Predecessors:} \\
-See pre-conditions.
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST), Guido Maulen (LSST)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-76] DMS-REQ-0174-V-01: Summit to Base Network Secondary Link }\label{lvv-76}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-76}{LVV-76} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T187 \\
 \end{tabular}
@@ -516,19 +365,25 @@ night of raw data (nCalibExpDay + nRawExpNightMax = 450 + 2800 = 3250
 exposures) within summToBaseNet2TransMax (72 hours).
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0174 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Summit to Base communications shall provide
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0174 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Summit to Base communications shall provide
 at least one secondary link or transport mechanism for minimal
 operations support in the event of extended outage. This link may
 include redundant fiber optics, microwaves, or transportable media. It
 shall be capable of transferring one night's worth of raw data in
-\textbf{summToBaseNet2TransMax} or less. \\ \cdashline{1-2}
+\textbf{summToBaseNet2TransMax} or less.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{summToBaseNet2TransMax = 72{{[}hour{]}}} Maximum time to
-transfer one night of data via the network secondary link. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+transfer one night of data via the network secondary link. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 DMS-REQ-0173 & Summit to Base Network Reliability \\
@@ -539,57 +394,33 @@ DMS-REQ-0172 & Summit to Base Network Availability \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T187] Verify implementation of Summit to Base Network Secondary Link }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T187}{LVV-T187} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T187}{LVV-T187} & \multicolumn{4}{p{12cm}}{ Verify implementation of Summit to Base Network Secondary Link } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify automated fail-over from primary to secondary equipment in Rubin
 Observatory DWDM on simulated failure of primary. ~Verify bandwidth
 sufficiency on secondary. ~Verify automated recovery to primary
 equipment on simulated restoration of primary. ~Repeat for failure of
 Rubin Observatory fiber and fail-over to AURA fiber and DWDM.
-~Demonstrate use of secondary in ``catch-up'' mode.
+~Demonstrate use of secondary in "catch-up" mode.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  PMCS DMTC-7400-2400 complete.
-\item
-  As-built documentation for Summit - Base Network is available.
-\end{enumerate}
-
-NOTE: After the initial test, the corresponding verification elements
-will be flagged as ``Requires Monitoring'' such that those requirements
-will be closed out as having been verified but will continue to be
-monitored throughout commissioning to ensure they do not drop out of
-compliance. This will also be monitored for end to end Summit - Data
-Facility transfers during Commissioning.
-
-\textbf{Predecessors:} \\
-See pre-conditions.
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-77] DMS-REQ-0175-V-01: Summit to Base Network Ownership and Operation }\label{lvv-77}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-77}{LVV-77} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T188 \\
 \end{tabular}
@@ -602,14 +433,20 @@ This requirement is verified by inspecting construction and operations
 contracts and Indefeasible Rights to Use (IRUs).
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0175 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Summit to Base communications link shall be
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0175 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Summit to Base communications link shall be
 owned and operated by LSST and/or the operations entity to ensure
-responsiveness of support. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+responsiveness of support.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 DMS-REQ-0173 & Summit to Base Network Reliability \\
@@ -620,46 +457,30 @@ DMS-REQ-0172 & Summit to Base Network Availability \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T188] Verify implementation of Summit to Base Network Ownership and Operation }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T188}{LVV-T188} &
-Jeff Kantor & Draft & 1 & false & Inspection
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T188}{LVV-T188} & \multicolumn{4}{p{12cm}}{ Verify implementation of Summit to Base Network Ownership and Operation } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Inspection \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify Summit to Base Network Ownership and Operation by LSST and/or the
 operations entity by inspection of construction and operations contracts
 and Indefeasible Rights.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  As-built documentation for all of the above contracts and IRUs is
-  available.
-\end{enumerate}
-
-\textbf{Predecessors:} \\
-PMCS DMTC-7400-2140, -2240, -2330 Complete
-
-\textbf{Test Personnel:} \\
-Jeff Kantor (LSST)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-81] DMS-REQ-0180-V-01: Base to Archive Network }\label{lvv-81}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-81}{LVV-81} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T193 \\
 \end{tabular}
@@ -670,22 +491,28 @@ LVV-T193 \\
 \textbf{Verification Element Description:} \\
 This requirement is verified by transferring simulated or pre-cursor
 image data and meta-data between base and archive over an uninterrupted
-1 day period. Â~Analyze the network performance and show that data can
-be transferred by DAQ within the required time.
+1 day period. ~Analyze the network performance and show that data can be
+transferred by DAQ within the required time.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0180 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide communications
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0180 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The DMS shall provide communications
 infrastructure between the Base Facility and the Archive Center
 sufficient to carry scientific data and associated metadata for each
-image in no more than time \textbf{baseToArchiveMaxTransferTime}. \\ \cdashline{1-2}
+image in no more than time \textbf{baseToArchiveMaxTransferTime}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{baseToArchiveMaxTransferTime = 5{{[}second{]}}} Maximum time
 interval to transfer a full Crosstalk Corrected Exposure and all related
-metadata from the Base Facility to the Archive Center. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+metadata from the Base Facility to the Archive Center. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0053 & Base-Archive Connectivity Loss \\
@@ -696,65 +523,31 @@ DMS-REQ-0162 & Pipeline Throughput \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T193] Verify implementation of Base to Archive Network }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T193}{LVV-T193} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T193}{LVV-T193} & \multicolumn{4}{p{12cm}}{ Verify implementation of Base to Archive Network } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify that the data acquired by a DAQ can be transferred within the
 required time, i.e. verify that link is capable of transferring image
 for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}, i.e.
 at or exceeding rates specified in \citeds{LDM-142}.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-  loaded with simulated or pre-cursor data, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  Archiver/Forwarder receivers or other capability is on configured at
-  LDF, connected to Base - Archive Network, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, FullCam) become
-available. ~Final verification will be tested at full operational
-volume. After the initial test, the corresponding verification elements
-will be flagged as ``Requires Monitoring'' such that those requirements
-will be closed out as having been verified but will continue to be
-monitored throughout commissioning to ensure they do not drop out of
-compliance. This will also be monitored for end to end Summit - Data
-Facility transfers during Commissioning.
-
-\textbf{Predecessors:} \\
-PMCS DM-Net-5 Complete
-
-\textbf{Test Personnel:} \\
-Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
-(NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-82] DMS-REQ-0181-V-01: Base to Archive Network Availability }\label{lvv-82}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-82}{LVV-82} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T194 \\
 \end{tabular}
@@ -768,15 +561,21 @@ archive over uninterrupted 1 week period, modeling to extrapolate to an
 annual failure rate, and verifying that is within the requirement.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0181 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base to Archive communications shall be
-highly available, with MTBF \textgreater{} \textbf{baseToArchNetMTBF}. \\ \cdashline{1-2}
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0181 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Base to Archive communications shall be
+highly available, with MTBF \textgreater{} \textbf{baseToArchNetMTBF}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{baseToArchNetMTBF = 180{{[}day{]}}} Mean time between failures,
-measured over a 1-yr period. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+measured over a 1-yr period. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0053 & Base-Archive Connectivity Loss \\
@@ -787,68 +586,31 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T194] Verify implementation of Base to Archive Network Availability }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T194}{LVV-T194} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T194}{LVV-T194} & \multicolumn{4}{p{12cm}}{ Verify implementation of Base to Archive Network Availability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify the availability of the Base to Archive Network communications by
 demonstrating that it meets or exceeds a mean time between failures,
 measured over a 1-yr period of MTBF \textgreater{} baseToArchNetMTBF
 (180{[}day{]})
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-  loaded with simulated or pre-cursor data, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  Archiver/Forwarder receivers or other capability is on configured at
-  LDF, connected to Base - Archive Network, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  At least 6 months of historical monitoring data on this link is
-  available.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, FullCam) become
-available. Final verification will be tested at full operational volume.
-After the initial test, the corresponding verification elements will be
-flagged as ``Requires Monitoring'' such that those requirements will be
-closed out as having been verified but will continue to be monitored
-throughout commissioning to ensure they do not drop out of compliance.
-This will also be monitored for end to end Summit - Data Facility
-transfers during Commissioning.
-
-\textbf{Predecessors:} \\
-~PMCS DMTC-7400-2130 Complete
-
-\textbf{Test Personnel:} \\
-Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
-(NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-83] DMS-REQ-0182-V-01: Base to Archive Network Reliability }\label{lvv-83}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-83}{LVV-83} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T195 \\
 \end{tabular}
@@ -862,15 +624,21 @@ base, after disconnecting fiber at an intermediate location between base
 and archive
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0182 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base to Archive communications shall be
-highly reliable, with MTTR \textless{} \textbf{baseToArchNetMTTR}. \\ \cdashline{1-2}
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0182 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Base to Archive communications shall be
+highly reliable, with MTTR \textless{} \textbf{baseToArchNetMTTR}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{baseToArchNetMTTR = 48{{[}hour{]}}} Mean time to repair,
-measured over a 1-yr period. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+measured over a 1-yr period. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0053 & Base-Archive Connectivity Loss \\
@@ -880,66 +648,30 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T195] Verify implementation of Base to Archive Network Reliability }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T195}{LVV-T195} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T195}{LVV-T195} & \multicolumn{4}{p{12cm}}{ Verify implementation of Base to Archive Network Reliability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify Base to Archive Network Reliability by demonstrating that the
 network can recover from outages within baseToArchNetMTTR =
 48{[}hour{]}.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-  loaded with simulated or pre-cursor data, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  Archiver/Forwarder receivers or other capability is on configured at
-  LDF, connected to Base - Archive Network, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  At least 6 months of monitoring data for this link is available.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, FullCam) become
-available. Final verification will be tested at full operational volume.
-After the initial test, the corresponding verification elements will be
-flagged as ``Requires Monitoring'' such that those requirements will be
-closed out as having been verified but will continue to be monitored
-throughout commissioning to ensure they do not drop out of compliance.
-This will also be monitored for end to end Summit - Data Facility
-transfers during Commissioning.\\[2\baselineskip]
-
-\textbf{Predecessors:} \\
-PMCS DM-NET-5 Complete
-
-\textbf{Test Personnel:} \\
-Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
-(NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-84] DMS-REQ-0183-V-01: Base to Archive Network Secondary Link }\label{lvv-84}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-84}{LVV-84} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T196 \\
 \end{tabular}
@@ -954,16 +686,22 @@ to primary link, while verifying data is transferred within required
 times.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0183 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base to Archive communications shall provide
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0183 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Base to Archive communications shall provide
 a secondary link or transport mechanism (e.g. protected circuit) for
-operations support and ``catch up'' in the event of extended outage
-which is capable of transferring data at least the same rate as the
-required minimum capacity of the primary link. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+operations support and "catch up" in the event of extended outage which
+is capable of transferring data at least the same rate as the required
+minimum capacity of the primary link.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 DMS-REQ-0181 & Base to Archive Network Availability \\
@@ -974,68 +712,30 @@ OSS-REQ-0049 & Degraded Operational States \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T196] Verify implementation of Base to Archive Network Secondary Link }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T196}{LVV-T196} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T196}{LVV-T196} & \multicolumn{4}{p{12cm}}{ Verify implementation of Base to Archive Network Secondary Link } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify Base to Archive Network Secondary Link failover and capacity, and
 subsequent recovery primary. Demonstrate the use of the secondary path
-in ``catch-up'' mode.
+in "catch-up" mode.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
-  loaded with simulated or pre-cursor data, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  Archiver/Forwarder receivers or other capability is on configured at
-  LDF, connected to Base - Archive Network, running on end node
-  computers that are the production hardware or equivalent to it.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, FullCam) become
-available. Final verification will be tested at full operational volume.
-After the initial test, the corresponding verification elements will be
-flagged as ``Requires Monitoring'' such that those requirements will be
-closed out as having been verified but will continue to be monitored
-throughout commissioning to ensure they do not drop out of compliance.
-This will also be monitored for end to end Summit - Data Facility
-transfers during Commissioning.\\[2\baselineskip]
-
-\textbf{Predecessors:} \\
-PMCS DM-NET-5 Complete\\
-PMCS DMTC-8000-0990 Complete\\
-PMCS DMTC-8100-2130 Complete\\
-PMCS DMTC-8100-2530 Complete\\
-PMCS DMTC-8200-0600 Complete
-
-\textbf{Test Personnel:} \\
-Josh Hoblitt (Rubin Obs), Renata Frez (FIU/AmLight), Matt Kollross
-(NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-88] DMS-REQ-0188-V-01: Archive to Data Access Center Network }\label{lvv-88}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-88}{LVV-88} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T200 \\
 \end{tabular}
@@ -1050,20 +750,26 @@ performance, and verifying that data can be transferred within the
 required time.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0188 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide communications
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0188 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The DMS shall provide communications
 infrastructure between the Archive Center and Data Access Centers
 sufficient to carry scientific data and associated metadata in support
 of community and EPO access. Aggregate bandwidth for data transfers from
 the Archive Center to Data Centers shall be at least
-\textbf{archToDacBandwidth}. \\ \cdashline{1-2}
+\textbf{archToDacBandwidth}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{archToDacBandwidth = 10000{{[}megabit per second{]}}} Aggregate
 bandwidth capacity for data transfers between the Archive and Data
-Access Centers. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+Access Centers. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 \end{tabular}
@@ -1071,63 +777,30 @@ Upper Level Requirement &
 \end{longtable}
 }
 
-\subsubsection{[LVV-T200] Verify implementation of Archive to Data Access Center Network }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T200}{LVV-T200} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T200}{LVV-T200} & \multicolumn{4}{p{12cm}}{ Verify implementation of Archive to Data Access Center Network } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify archiving of data to Data Access Center Network at or exceeding
 rates specified in \citeds{LDM-142}, i.e at archToDacBandwidth = 10000{[}megabit
 per second{]}.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Data is staged in LDF and data transfer capabilities to US DAC and
-  Chilean DAC are in place, running on end node computers that are the
-  production hardware or equivalent to it.
-\item
-  At least 6 months of historical monitoring data is available on these
-  network links.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, LSSTCam) become
-available. Final verification will be tested at full operational volume.
-After the initial test, the corresponding verification elements will be
-flagged as ``Requires Monitoring'' such that those requirements will be
-closed out as having been verified but will continue to be monitored
-throughout commissioning to ensure they do not drop out of compliance.
-This will also be monitored for end to end Summit - Data Facility
-transfers during Commissioning.\\[2\baselineskip]
-
-\textbf{Predecessors:} \\
-PMCS DMTC-8100-2550 Complete
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
-(FIU/AmLight), Matt Kollross (NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-89] DMS-REQ-0189-V-01: Archive to Data Access Center Network Availability }\label{lvv-89}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-89}{LVV-89} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T201 \\
 \end{tabular}
@@ -1142,17 +815,23 @@ modeling as failures are rare, so an annual MTBF will be estimated from
 test results.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0189 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Archive to Data Access Center communications
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0189 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Archive to Data Access Center communications
 shall be highly available, with MTBF \textgreater{}
-\textbf{archToDacNetMTBF}. \\ \cdashline{1-2}
+\textbf{archToDacNetMTBF}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{archToDacNetMTBF = 180{{[}day{]}}} Mean Time Between Failures
 for data service between Archive and DACs, averaged over a one-year
-period. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+period. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
@@ -1161,64 +840,30 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T201] Verify implementation of Archive to Data Access Center Network
-Availability }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T201}{LVV-T201} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T201}{LVV-T201} & \multicolumn{4}{p{12cm}}{ Verify implementation of Archive to Data Access Center Network
+Availability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify availability of archiving to Data Access Center Network using
 test and historical data of or exceeding archToDacNetMTBF= 180{[}day{]}.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Data is staged in LDF and data transfer capabilities to US DAC and
-  Chilean DAC are in place, ~running on end node computers that are the
-  production hardware or equivalent to it.
-\item
-  At least 6 months of historical monitoring data is available on these
-  network links, ~running on end node computers that are the production
-  hardware or equivalent to it.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, FullCam) become
-available. Final verification will be tested at full operational volume.
-After the initial test, the corresponding verification elements will be
-flagged as ``Requires Monitoring'' such that those requirements will be
-closed out as having been verified but will continue to be monitored
-throughout commissioning to ensure they do not drop out of compliance.
-This will also be monitored for end to end Summit - Data Facility
-transfers during Commissioning.\\[2\baselineskip]
-
-\textbf{Predecessors:} \\
-PMCS DMTC-8100-2550 Complete
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
-(FIU/AmLight), Matt Kollross (NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-90] DMS-REQ-0190-V-01: Archive to Data Access Center Network Reliability }\label{lvv-90}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-90}{LVV-90} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T202 \\
 \end{tabular}
@@ -1232,16 +877,22 @@ data between archive and DACs, after disconnecting fiber at an
 intermediate location between archive and DACs.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0190 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Archive to Data Access Center communications
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0190 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Archive to Data Access Center communications
 shall be highly reliable, with MTTR \textless{}
-\textbf{archToDacNetMTTR}. \\ \cdashline{1-2}
+\textbf{archToDacNetMTTR}.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{archToDacNetMTTR = 48{{[}hour{]}}} Mean time to repair, measured
-over a 1-yr period. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+over a 1-yr period. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
@@ -1250,62 +901,32 @@ DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T202] Verify implementation of Archive to Data Access Center Network
-Reliability }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T202}{LVV-T202} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T202}{LVV-T202} & \multicolumn{4}{p{12cm}}{ Verify implementation of Archive to Data Access Center Network
+Reliability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify the reliability of Archive to Data Access Center Network by
 demonstrating successful failover and capacity to the secondary part and
 subsequent recovery to primary within or exceeding chToDacNetMTTR =
 48{[}hour{]}.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Data is staged in LDF and data transfer capabilities to US DAC and
-  Chilean DAC are in place, running on end node computers that are the
-  production hardware or equivalent to it.
-\item
-  As-built documentation for all of the above is available.
-\item
-  NOTE: This test will be repeated at increasing data volumes as
-  additional observatory capabilities (e.g. ComCAM, LSSTCam) become
-  available. ~Final verification will be tested at full operational
-  volume. ~After the initial test, the corresponding verification
-  elements will be flagged as ``Requires Monitoring'' such that those
-  requirements will be closed out as having been verified but will
-  continue to be monitored throughout commissioning to ensure they do
-  not drop out of compliance. This will also be monitored for end to end
-  Summit - Data Facility transfers during Commissioning.
-\end{enumerate}
-
-\textbf{Predecessors:} \\
-PMCS DMTC-8100-2550 Complete
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
-(FIU/AmLight), Matt Kollross (NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-91] DMS-REQ-0191-V-01: Archive to Data Access Center Network Secondary Link }\label{lvv-91}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-91}{LVV-91} &
-Leanne Guy & Covered & 1b &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T203 \\
 \end{tabular}
@@ -1319,15 +940,21 @@ data between archive and DACs, after disconnecting fiber at an
 intermediate location between archive and DACs.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0191 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Archive to Data Access Center communications
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0191 \\ \hline
+Requirement Priority & 1b \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Archive to Data Access Center communications
 shall provide secondary link or transport mechanism (e.g. protected
-circuit) for operations support and ``catch up'' in the event of
-extended outage. \\ \cdashline{1-2}
-Requirement Priority & 1b \\ \cdashline{1-2}
+circuit) for operations support and "catch up" in the event of extended
+outage.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 DMS-REQ-0189 & Archive to Data Access Center Network Availability \\
@@ -1337,61 +964,31 @@ DMS-REQ-0190 & Archive to Data Access Center Network Reliability \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T203] Verify implementation of Archive to Data Access Center Network Secondary
-Link }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T203}{LVV-T203} &
-Kian-Tat Lim & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T203}{LVV-T203} & \multicolumn{4}{p{12cm}}{ Verify implementation of Archive to Data Access Center Network Secondary
+Link } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify the Archive to Data Access Center Network via Secondary Link by
 simulating a failure on the primary path and capacity on the secondary
 path.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Data is staged in LDF and data transfer capabilities to US DAC and
-  Chilean DAC are in place, running on end node computers that are the
-  production hardware or equivalent to it.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-NOTE: This test will be repeated at increasing data volumes as
-additional observatory capabilities (e.g. ComCAM, FullCam) become
-available. Final verification will be tested at full operational volume.
-After the initial test, the corresponding verification elements will be
-flagged as ``Requires Monitoring'' such that those requirements will be
-closed out as having been verified but will continue to be monitored
-throughout commissioning to ensure they do not drop out of compliance.
-This will also be monitored for end to end Summit - Data Facility
-transfers during Commissioning.\\[2\baselineskip]
-
-\textbf{Predecessors:} \\
-PMCS DMTC-8100-2550 Complete
-
-\textbf{Test Personnel:} \\
-Ron Lambert (LSST), Albert Astudillo (REUNA), Jeronimo Bezerra
-(FIU/AmLight), Matt Kollross (NCSA)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-183] DMS-REQ-0352-V-01: Base Wireless LAN (WiFi) }\label{lvv-183}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-183}{LVV-183} &
-Leanne Guy & Covered & 2 &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T192 \\
 \end{tabular}
@@ -1404,17 +1001,23 @@ At Base Facility, connect to WiFi, test connection speed, i.e. send
 email, browse web, and retrieve files from the Internet.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0352 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base LAN shall provide \textbf{minBaseWiFi}
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0352 \\ \hline
+Requirement Priority & 2 \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Base LAN shall provide \textbf{minBaseWiFi}
 Wireless LAN (WiFi) and Wireless Access Points in the Base Facility to
 support connectivity of individual user's computers to the network
-backbones. \\ \cdashline{1-2}
+backbones.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{minBaseWifi = 1000{{[}megabit per second{]}}} Maximum allowable
-outage of active DM production. \\ \cdashline{1-2}
-Requirement Priority & 2 \\ \cdashline{1-2}
+outage of active DM production. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0003 & The Base Facility \\
@@ -1423,47 +1026,29 @@ OSS-REQ-0003 & The Base Facility \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T192] Verify implementation of Base Wireless LAN (WiFi) }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T192}{LVV-T192} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T192}{LVV-T192} & \multicolumn{4}{p{12cm}}{ Verify implementation of Base Wireless LAN (WiFi) } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify as-built wireless network at the Base Facility supports
 minBaseWiFi bandwidth (1000 Mbs).
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Base Wireless LAN is installed/configured and Test Personnel have
-  accounts for email, internet access.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-\textbf{Predecessors:} \\
-PMCS DLP-465 Complete.
-
-\textbf{Test Personnel:} \\
-Heinrich Reinking (LSST)
-
-
-\newpage
+  
+\newpage 
 \subsection{[LVV-18491] DMS-REQ-0352-V-02: Base Voice Over IP (VOIP) }\label{lvv-18491}
 
-\begin{longtable}{ccccc}
+\begin{longtable}{cccc}
 \hline
-\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Test Cases}\\ \hline
 \href{https://jira.lsstcorp.org/browse/LVV-18491}{LVV-18491} &
-Leanne Guy & Covered & 2 &
+Leanne Guy & Covered &
 \begin{tabular}{c}
 LVV-T181 \\
 \end{tabular}
@@ -1478,17 +1063,23 @@ extensions allocated properly, no frequent drop-outs, no frequent
 jaggies on video, etc.). Test voice calls and videoconferening.
 
 {\footnotesize
-\begin{longtable}{p{3cm}p{13cm}}
+\begin{tabular}{p{4cm}p{12cm}}
 \hline
-\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
-Requirement ID & DMS-REQ-0352 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base LAN shall provide \textbf{minBaseWiFi}
+\multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
+Requirement ID & DMS-REQ-0352 \\ \hline
+Requirement Priority & 2 \\ \hline
+\multicolumn{2}{l}{Requirement Description and Discussion:} \\ \cdashline{1-2}
+\end{tabular}
+
+\textbf{Specification:} The Base LAN shall provide \textbf{minBaseWiFi}
 Wireless LAN (WiFi) and Wireless Access Points in the Base Facility to
 support connectivity of individual user's computers to the network
-backbones. \\ \cdashline{1-2}
+backbones.
+
+\begin{longtable}{p{4cm}p{12cm}}
+\hline
 Requirement Parameters & \textbf{minBaseWifi = 1000{{[}megabit per second{]}}} Maximum allowable
-outage of active DM production. \\ \cdashline{1-2}
-Requirement Priority & 2 \\ \cdashline{1-2}
+outage of active DM production. \\ \hline
 Upper Level Requirement &
 \begin{tabular}{cl}
 OSS-REQ-0003 & The Base Facility \\
@@ -1497,45 +1088,23 @@ OSS-REQ-0003 & The Base Facility \\
 \end{longtable}
 }
 
-\subsubsection{[LVV-T181] Verify Base Voice Over IP (VOIP) }
 
-\begin{longtable}{cccccc}
-\hline
-\multicolumn{6}{c}{\textbf{Test Case Summary}} \\ \hline
-\textbf{Jira Link} & \textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} &
-\textbf{Verification Type} \\ \hline
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{LVV-T181} &
-Jeff Kantor & Draft & 1 & false & Test
-\\ \hline
-\end{longtable}
-
-\textbf{Objective:} \\
+\subsubsection{Test Cases Summary}
+\begin{tabular}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{LVV-T181} & \multicolumn{4}{p{12cm}}{ Verify Base Voice Over IP (VOIP) } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeff Kantor & Draft & 1 & false & Test \\ \hline
+\end{tabular}
+{\footnotesize
+\textbf{Objective:}\\
 Verify as-built VOIP at the Base Facility is operational and performs as
 expected (i.e. sufficient number of extensions allocated properly, no
 frequent drop-outs, no frequent jaggies on video, etc.) on both voice
 calls and videoconferening.
+}
 
-\textbf{Precondition:} \\
-\begin{enumerate}
-\tightlist
-\item
-  Base VOIP is installed/configured and Test Personnel have phone sets.
-  ~Base Videoconference system is installed/configured. ~Summit,
-  Headquarters, and/or LDF Videconference system is
-  installed/configured.
-\item
-  As-built documentation for all of the above is available.
-\end{enumerate}
-
-\textbf{Predecessors:} \\
-PMCS DLP-465 Complete\\
-PMCS IT-702 Complete
-
-\textbf{Test Personnel:} \\
-Heinrich Reinking (LSST), another LSST DM Person at Summit,
-Headquarters, or LDF
-
-
+  
 
 \newpage
 \appendix
@@ -1546,72 +1115,79 @@ Headquarters, or LDF
 \hline
 \textbf{Requirements} & \textbf{Verification Elements} & \textbf{Test Cases} \\ \hline
  DMS-REQ-0168  &
- LVV-71({\scriptsize Gregory Dubois-Felsmann })  &
-LVV-T1097 ({\scriptsize Jeff Kantor }) \\
+ LVV-71  &
+LVV-T1097 \\
  &
  &
-LVV-T2338 ({\scriptsize Simon Krughoff }) \\
+LVV-T2338 \\
 \hline
  DMS-REQ-0171  &
- LVV-73({\scriptsize Leanne Guy })  &
-LVV-T1168 ({\scriptsize Jeff Kantor }) \\
+ LVV-73  &
+LVV-T1168 \\
  &
  &
-LVV-T1612 ({\scriptsize Jeff Kantor }) \\
+LVV-T1612 \\
 \hline
  DMS-REQ-0172  &
- LVV-74({\scriptsize Leanne Guy })  &
-LVV-T185 ({\scriptsize Jeff Kantor }) \\
+ LVV-74  &
+LVV-T185 \\
 \hline
  DMS-REQ-0173  &
- LVV-75({\scriptsize Leanne Guy })  &
-LVV-T186 ({\scriptsize Jeff Kantor }) \\
+ LVV-75  &
+LVV-T186 \\
 \hline
  DMS-REQ-0174  &
- LVV-76({\scriptsize Leanne Guy })  &
-LVV-T187 ({\scriptsize Jeff Kantor }) \\
+ LVV-76  &
+LVV-T187 \\
 \hline
  DMS-REQ-0175  &
- LVV-77({\scriptsize Leanne Guy })  &
-LVV-T188 ({\scriptsize Jeff Kantor }) \\
+ LVV-77  &
+LVV-T188 \\
 \hline
  DMS-REQ-0180  &
- LVV-81({\scriptsize Leanne Guy })  &
-LVV-T193 ({\scriptsize Jeff Kantor }) \\
+ LVV-81  &
+LVV-T193 \\
 \hline
  DMS-REQ-0181  &
- LVV-82({\scriptsize Leanne Guy })  &
-LVV-T194 ({\scriptsize Jeff Kantor }) \\
+ LVV-82  &
+LVV-T194 \\
 \hline
  DMS-REQ-0182  &
- LVV-83({\scriptsize Leanne Guy })  &
-LVV-T195 ({\scriptsize Jeff Kantor }) \\
+ LVV-83  &
+LVV-T195 \\
 \hline
  DMS-REQ-0183  &
- LVV-84({\scriptsize Leanne Guy })  &
-LVV-T196 ({\scriptsize Jeff Kantor }) \\
+ LVV-84  &
+LVV-T196 \\
 \hline
  DMS-REQ-0188  &
- LVV-88({\scriptsize Leanne Guy })  &
-LVV-T200 ({\scriptsize Jeff Kantor }) \\
+ LVV-88  &
+LVV-T200 \\
 \hline
  DMS-REQ-0189  &
- LVV-89({\scriptsize Leanne Guy })  &
-LVV-T201 ({\scriptsize Jeff Kantor }) \\
+ LVV-89  &
+LVV-T201 \\
 \hline
  DMS-REQ-0190  &
- LVV-90({\scriptsize Leanne Guy })  &
-LVV-T202 ({\scriptsize Jeff Kantor }) \\
+ LVV-90  &
+LVV-T202 \\
 \hline
  DMS-REQ-0191  &
- LVV-91({\scriptsize Leanne Guy })  &
-LVV-T203 ({\scriptsize Kian-Tat Lim }) \\
+ LVV-91  &
+LVV-T203 \\
 \hline
  DMS-REQ-0352  &
- LVV-183({\scriptsize Leanne Guy })  &
-LVV-T192 ({\scriptsize Jeff Kantor }) \\
+ LVV-183  &
+LVV-T192 \\
  \cdashline{2-3}  &
- LVV-18491({\scriptsize Leanne Guy })  &
-LVV-T181 ({\scriptsize Jeff Kantor }) \\
+ LVV-18491  &
+LVV-T181 \\
 \hline
 \end{longtable}
+
+Note that some of the requirements listed in this traceability table may be related with additional
+Verification Elements not in the scope of
+\textit{ DM } component
+\textit{ NETWORK } subcomponent
+Verification,
+and therefore not listed here.
