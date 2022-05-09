@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % generated from JIRA project LVV
-% using template at /usr/local/anaconda3/envs/docsteady-old/lib/python3.7/site-packages/docsteady/templates/ve.latex.jinja2.
+% using template at /usr/share/miniconda/envs/docsteady-old/lib/python3.7/site-packages/docsteady/templates/ve.latex.jinja2.
 % using docsteady version 2.0
 % Please do not edit -- update information in Jira instead
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,14 +97,12 @@ Simon Krughoff & Defined & 1 & false & Demonstration \\ \hline
 Show that telemetry data can be accessed from the replicated EFD.
 ~Further, show that the values in the replicated database agree with the
 values in the summit EFD over a specified time range and set of
-topics.\\
-~\\
-This test case provides partial coverage of the requirement
-DMS-REQ-0168, Summit Facility Data Communications: "The DMS shall
-provide data communications infrastructure to accept science data and
-associated metadata read-outs, and \textbf{the collection of ancillary
-and engineering data}, for transfer to the base facility.", as adapted
-to the current design for EFD replication (see
+topics.\\[2\baselineskip]This test case provides partial coverage of the
+requirement DMS-REQ-0168, Summit Facility Data Communications: "The DMS
+shall provide data communications infrastructure to accept science data
+and associated metadata read-outs, and \textbf{the collection of
+ancillary and engineering data}, for transfer to the base facility.", as
+adapted to the current design for EFD replication (see
 \href{https://dmtn-082.lsst.io}{DMTN-082}).
 }
 
@@ -337,8 +335,7 @@ Verify the reliability of the summit to base network by demonstrating
 reconnection and recovery to transfer of data at or exceeding rates
 specified in \citeds{LDM-142} following a cut in network connection, within MTTR
 specification. The network operator will provide MTTR data on links
-during commissioning and operations.\\
-~\\
+during commissioning and operations.\\[2\baselineskip]
 }
 
   
@@ -409,7 +406,7 @@ Observatory DWDM on simulated failure of primary. ~Verify bandwidth
 sufficiency on secondary. ~Verify automated recovery to primary
 equipment on simulated restoration of primary. ~Repeat for failure of
 Rubin Observatory fiber and fail-over to AURA fiber and DWDM.
-~Demonstrate use of secondary in "catch-up" mode.
+~Demonstrate use of secondary in ``catch-up'' mode.
 }
 
   
@@ -696,9 +693,9 @@ Requirement Priority & 1b \\ \hline
 
 \textbf{Specification:} The Base to Archive communications shall provide
 a secondary link or transport mechanism (e.g. protected circuit) for
-operations support and "catch up" in the event of extended outage which
-is capable of transferring data at least the same rate as the required
-minimum capacity of the primary link.
+operations support and ``catch up'' in the event of extended outage
+which is capable of transferring data at least the same rate as the
+required minimum capacity of the primary link.
 
 \begin{longtable}{p{4cm}p{12cm}}
 \hline
@@ -724,7 +721,7 @@ Jeff Kantor & Draft & 1 & false & Test \\ \hline
 \textbf{Objective:}\\
 Verify Base to Archive Network Secondary Link failover and capacity, and
 subsequent recovery primary. Demonstrate the use of the secondary path
-in "catch-up" mode.
+in ``catch-up'' mode.
 }
 
   
@@ -950,8 +947,8 @@ Requirement Priority & 1b \\ \hline
 
 \textbf{Specification:} The Archive to Data Access Center communications
 shall provide secondary link or transport mechanism (e.g. protected
-circuit) for operations support and "catch up" in the event of extended
-outage.
+circuit) for operations support and ``catch up'' in the event of
+extended outage.
 
 \begin{longtable}{p{4cm}p{12cm}}
 \hline
