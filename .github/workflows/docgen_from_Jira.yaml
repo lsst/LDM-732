@@ -23,7 +23,6 @@ jobs:
       - name: condaenv
         run: |
           conda init bash
-          #docsteady=2.0_0_gae9669c
           conda create --name docsteady-env  docsteady -c lsst-dm -c conda-forge
         shell: bash
 
