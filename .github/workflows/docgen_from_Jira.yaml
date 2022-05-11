@@ -23,7 +23,8 @@ jobs:
       - name: condaenv
         run: |
           conda init bash
-          conda create --name docsteady-old docsteady=2.0_0_gae9669c -c lsst-dm -c conda-forge
+          #docsteady=2.0_0_gae9669c
+          conda create --name docsteady-env  docsteady -c lsst-dm -c conda-forge
         shell: bash
 
       - name: docugen
@@ -31,7 +32,7 @@ jobs:
           JIRA_USER: ${{ secrets.JIRA_USER }}
           JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
         run: |
-          source ${CONDA}/bin/activate docsteady-old
+          source ${CONDA}/bin/activate docsteady-env
           docsteady baseline-ve --subcomponent NETWORK jira_docugen.tex
 
 
