@@ -32,7 +32,7 @@ TCS: Telescope Control System
 CCS: Camera Control System
 ISO: International Standards Organization
 LS: La Serena
-VNVD: Vera C Rubin Observatory Network Verification Document
+NVE: Network Verification Elements
 DMSSIT: DM Subsystem Integration Test
 SIT: LSST System Integration Test
 LL: Lower Level
