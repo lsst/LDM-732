@@ -33,7 +33,7 @@
 \setDocDate{\today}
 
 \setDocAbstract {
-The Network Verification Elements and associated JIRA V\&V Project define the flow-down of specifications from higher level documents to the LSST Observatory Network (as defined in \citeds{LSE-61} Data Management System (DMS) Requirements), and the methods and resources that will be used to verify that the networks have met the specifications satisfactory for accepting the Summit Network into DM Subsystem Integration Test (DMSSIT) and LSST System Integration Test (SIT).
+The Network Verification Elements document and associated \href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation (LVV)} Jira project define the flow-down of specifications from higher level documents to the Observatory Network (as defined in \citeds{LSE-61} Data Management System (DMS) Requirements), as well as identifying the methods and resources that will be used to verify that network requirements have been met.
 }
 
 % Most recent last
@@ -57,7 +57,7 @@ The Network Verification Elements and associated JIRA V\&V Project define the fl
 
 This document pertains only to the verification of the network infrastructure, not the applications and services that use the network, specifically, up to \href{https://en.wikipedia.org/wiki/OSI_model}{OSI Layer} 3.
 
-As such, all of the Verification Elements governed by this document and defined in the \href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation JIRA Project (LVV)} are Lower Level (LL) in the System Engineering test hierarchy.
+As such, all of the Verification Elements governed by this document and defined in the \href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation (LVV)} Jira project are Lower Level (LL) in the System Engineering test hierarchy.
 
 LL corresponds to Data Management Subsystem Integration.
 Where appropriate, additional comments regarding Same Level (SL) which corresponds to LSST System Integration, and Higher Level (HL) which corresponds to LSST Commissioning, are called out in the Verification Elements.
@@ -70,7 +70,7 @@ Note that significant testing of the networks occurs prior to subsystem and syst
 
 The Data Management Subsystem Requirements (\citeds{LSE-61}, aka DMSR) drive the LSST Observatory Network Design.
 The DMSR sections that directly drive the VNVD are listed here for convenience.
-These DMSR sections contain traceable network requirements as documented in the LSST V\&V JIRA Project (LVV) Verification Elements:
+These DMSR sections contain traceable network requirements as documented in the \href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation (LVV)} Jira project Verification Elements:
 
 \begin{itemize}
 \item 1.2.1 Nightly Data Accessible Within 24 hrs
@@ -87,9 +87,9 @@ These DMSR sections contain traceable network requirements as documented in the 
 Note that the Observatory System Specifications (\citeds{LSE-30}, aka OSS) also include general requirements on security, disaster recovery, physical environment (including seismic activity), and shipping which are flowed down to the subsystems, and while they apply to all subsystems, including the networks, they will be tested and verified in the Telescope and Data Management Subsystem Integration Tests and in the LSST Commissioning Phase, as part of the LSST System Integration Test.
 Those requirements are excluded from this specification and the associated verification matrix, as they will be addressed in the applicable plans.
 
-\subsection{LSST Verification and Validation JIRA Project (LVV)}\label{sec:lvv}
+\subsection{LSST Verification and Validation (LVV) Jira project}\label{sec:lvv}
 
-The LSST Verification and Validation JIRA Project lists the specifications within or derived from, and traceable to, the DMSR specifications, in Verification Elements that also specify the methods to be used to verify, the responsible parties, and additional notes regarding verification, per the \citeds{LSE-160} LSST Verification and Validation Process.
+The \href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation (LVV)} Jira project lists the specifications within or derived from, and traceable to, the DMSR specifications, in Verification Elements that also specify the methods to be used to verify, the responsible parties, and additional notes regarding verification, per the \citeds{LSE-160} LSST Verification and Validation Process.
 The Verification Elements then have one or more Test Cases associated with them that describe the implementation of the verification activities in terms of specific tests to be executed.
 Those Test Cases are then scheduled via Test Plans and Campaigns, and executed with results reported in Test Cycles.
 
