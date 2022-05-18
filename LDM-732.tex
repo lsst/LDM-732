@@ -6,6 +6,7 @@
 \usepackage{pdflscape}
 \usepackage{graphicx}
 \usepackage{lipsum}
+\usepackage{ulem}
 
 
 \input{meta.tex}
@@ -69,18 +70,36 @@ Note that significant testing of the networks occurs prior to subsystem and syst
 \subsubsection{Data Management Subsystem Requirements Flow-down}\label{sec:dmreqflowd}
 
 The Data Management Subsystem Requirements (DMSR) (\citeds{LSE-61}) drive the LSST Observatory Network Design.
-The specific DMSR sections that directly drive network design are listed here for convenience.
-These DMSR sections contain traceable network requirements as documented in the \href{https://jira.lsstcorp.org/projects/LVV/}{LSST Verification and Validation (LVV)} Jira project Verification Elements:
+The specific DMSR requirements that directly drive network design are listed here for convenience.
 
-\begin{itemize}
-\item 1.2.1 Nightly Data Accessible Within 24 hrs
-\item 2.6.3 Transient Alert Distribution
-\item 2.6.8 Solar System Objects Available within 24 hours
-\item 2.8.1 Timely Publication of Level 2 Data Releases
-\item 4.4 Summit to Base
-\item 4.6 Base to Archive
-\item 4.8 Archive to Data Access Center
-\end{itemize}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+    \bf Name & \bf ID \\ \hline
+    1.3.1 Nightly Data Accessible Within Specified Time         & DMS-REQ-0004 (Priority: 1b) \\ \hline
+    1.6.4 Constraints on Level 1 Special Program Products Generation & DMS-REQ-0344 (Priority: 2) \\ \hline
+    2.2.3 Transient Alert Distribution                          & DMS-REQ-0002 (Priority: 1b) \\ \hline % this only applies to USDF?
+    2.2.3.1 Alert Stream Distribution                           & DMS-REQ-0391 (Priority: 2) \\ \hline
+    2.2.3.2 Alert Delay and Failure Tolerances                  & DMS-REQ-0392 (Priority: 2) \\ \hline
+    2.2.7 DIASource Precovery                                   & DMS-REQ-0287 (Priority: 1b) \\ \hline
+    2.2.9 Solar System Objects Available Within Specified Time  & DMS-REQ-0089 (Priority: 1b) \\ \hline
+    4.1.2 Engineering \& Facility Database Archive              & DMS-REQ-0102 (Priority: 1b) \\ \hline
+    4.4.1 Summit to Base Network                                & DMS-REQ-0171 (Priority: 1a) \\ \hline
+    4.4.2 Summit to Base Network Availability                   & DMS-REQ-0172 (Priority: 1b) \\ \hline
+    4.4.3 Summit to Base Network Reliability                    & DMS-REQ-0173 (Priority: 1b) \\ \hline
+    4.4.4 Summit to Base Network Secondary Link                 & DMS-REQ-0174 (Priority: 1b) \\ \hline
+    \sout{4.4.5 Summit to Base Network Ownership and Operation} & DMS-REQ-0175 (Priority: 1b) \\ \hline % impossible due to telecom regulations in chile
+    4.5.5 Base Wireless LAN (WiFi)                              & DMS-REQ-0352 (Priority: 2) \\ \hline
+    4.6.1 Base to Archive Network                               & DMS-REQ-0180 (Priority: 1b) \\ \hline
+    4.6.2 Base to Archive Network Availability                  & DMS-REQ-0181 (Priority: 1b) \\ \hline
+    4.6.3 Base to Archive Network Reliability                   & DMS-REQ-0182 (Priority: 1b) \\ \hline
+    4.6.4 Base to Archive Network Secondary Link                & DMS-REQ-0183 (Priority: 1b) \\ \hline
+    4.8.1 Archive to Data Access Center Network                 & DMS-REQ-0188 (Priority: 1b) \\ \hline
+    4.8.2 Archive to Data Access Center Network Availability    & DMS-REQ-0189 (Priority: 1b) \\ \hline
+    4.8.3 Archive to Data Access Center Network Reliability     & DMS-REQ-0190 (Priority: 1b) \\ \hline
+    4.8.4 Archive to Data Access Center Network Secondary Link  & DMS-REQ-0191 (Priority: 1b) \\ \hline
+\end{tabular}
+\end{center}
 
 \subsubsection{Observatory System Specifications Flow-down}\label{sec:ossflowd}
 
