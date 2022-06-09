@@ -16,7 +16,7 @@ ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
 
-$(JOBNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
+$(JOBNAME).pdf: figures $(DOCNAME).tex meta.tex acronyms.tex
 	xelatex -jobname=$(JOBNAME) $(DOCNAME)
 	bibtex $(JOBNAME)
 	xelatex -jobname=$(JOBNAME) $(DOCNAME)
@@ -54,6 +54,10 @@ myacronyms.txt :
 
 skipacronyms.txt :
 	touch skipacronyms.txt
+
+.PHONY: figures
+figures: figures/scope
+	$(MAKE) -C $<
 
 clean :
 	latexmk -c

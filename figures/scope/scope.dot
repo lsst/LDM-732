@@ -1,0 +1,37 @@
+digraph top {
+  dpi=100
+  //ranksep=2
+  rankdir=LR
+  overlap=false
+  newrank=true
+  clusterrank=local
+  compound=true
+  //layout=fdp
+
+  node [fontsize=24 color=darkgreen fontcolor=darkgreen]
+  summit [label="Summit"]
+  base [label="Base"]
+  archive [label="Archive"]
+  dac [label="Data Access Center"]
+
+  subgraph cluster0 {
+    label="Base Data Center"
+    fontsize=18
+    style=dashed
+
+    base
+    dac
+  }
+
+  subgraph cluster1 {
+    label="US Data Facility"
+    fontsize=18
+    style=dashed
+
+    archive
+  }
+
+  summit -> base
+  base -> archive
+  archive -> dac
+}
